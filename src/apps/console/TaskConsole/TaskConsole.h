@@ -1,9 +1,13 @@
 #ifndef TASKCONSOLE_H
 #define TASKCONSOLE_H
 
-#include <QObject>
+#include <QThread>
 
-class TaskConsole : public QObject
+#include <QIODevice>
+
+#include "StdIODevice.h"
+
+class TaskConsole : public QThread
 {
     Q_OBJECT
 public:
@@ -12,6 +16,12 @@ public:
 signals:
 
 public slots:
+
+private slots:
+    void init(void);
+
+private:
+    StdIODevice * mpStdIO = 0;
 };
 
 #endif // TASKCONSOLE_H

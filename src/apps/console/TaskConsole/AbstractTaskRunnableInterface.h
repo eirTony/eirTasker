@@ -19,7 +19,9 @@ public:
                                   const AbstractTaskContextEntity & context,
                                   const AbstractTaskConfigurationEntity & config,
                                   const AbstractTaskInputEntity & input);
-    AbstractTaskResultsEntity & result() (void) const;
+    AbstractTaskResultsEntity results(void) const;
+    AbstractTaskResultsEntity operator() (void) const;
+    AbstractTaskResultsEntity takeResults(void);
 
 protected:
     void notifyRunning(const int minProgress, const int maxProgress);
@@ -27,7 +29,7 @@ protected:
     void notifyFinished(const bool ok);
 
 private:
-    const AbstractTaskObject * cmpObject = 0;
+    AbstractTaskObject * const cmpObject = 0;
     AbstractTaskContextEntity mContext;
     AbstractTaskConfigurationEntity mConfig;
     AbstractTaskInputEntity mInput;

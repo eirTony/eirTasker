@@ -21,7 +21,8 @@ SOURCES += main.cpp \
     AbstractTaskContextEntity.cpp \
     AbstractTaskConfigurationEntity.cpp \
     AbstractTaskResultsEntity.cpp \
-    AbstractTaskInputEntity.cpp
+    AbstractTaskInputEntity.cpp \
+    StdIODevice.cpp
 
 HEADERS += \
     TaskConsole.h \
@@ -35,5 +36,6 @@ HEADERS += \
     AbstractTaskContextEntity.h \
     AbstractTaskConfigurationEntity.h \
     AbstractTaskResultsEntity.h \
-    AbstractTaskInputEntity.h
+    AbstractTaskInputEntity.h \
+    StdIODevice.h
 

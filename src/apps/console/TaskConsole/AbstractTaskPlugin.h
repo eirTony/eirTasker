@@ -8,6 +8,7 @@ class AbstractTaskPlugin
         : public AbstractTaskObject
         , public AbstractTaskRunnableInterface
 {
+    Q_OBJECT
 public:
     AbstractTaskPlugin(QObject  * parent=0);
 };

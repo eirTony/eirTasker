@@ -7,14 +7,31 @@ AbstractTaskRunnableInterface::
                               const AbstractTaskContextEntity & context,
                               const AbstractTaskConfigurationEntity & config,
                               const AbstractTaskInputEntity & input)
-    : cmpObject(taskObject) , mContext(context) , mConfig(config) , mInput(input) {;}
-
-AbstractTaskResultsEntity &
-    AbstractTaskRunnableInterface::result (void) const
+    : cmpObject(taskObject)
+    , mContext(context)
+    , mConfig(config)
+    , mInput(input)
 {
-    return & mReslults;
+    QRunnable::setAutoDelete(false);
 }
 
+AbstractTaskResultsEntity
+    AbstractTaskRunnableInterface::results(void) const
+{
+    return mReslults;
+}
 
+AbstractTaskResultsEntity
+    AbstractTaskRunnableInterface::operator() (void) const
+{
+    return results();
+}
+
+AbstractTaskResultsEntity AbstractTaskRunnableInterface::takeResults(void)
+{
+    AbstractTaskResultsEntity entity = results();
+    cmpObject->deleteInterface(this);
+    return entity;
+}
 
 

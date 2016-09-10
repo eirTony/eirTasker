@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+class AbstractTaskRunnableInterface;
+
 class AbstractTaskObject : public QObject
 {
     Q_OBJECT
@@ -12,7 +14,7 @@ public:
     void emitRunning(const int minProgress, const int maxProgress);
     void emitProgress(const int value);
     void emitFinished(const bool ok);
-
+    void deleteInterface(AbstractTaskRunnableInterface * rif);
 
 signals:
     void running(void);
