@@ -8,8 +8,13 @@ AbstractTaskObject::AbstractTaskObject(QObject * parent)
     setObjectName("AbstractTaskObject");
 }
 
-void AbstractTaskObject::deleteInterface(AbstractTaskRunnableInterface * rif)
+void AbstractTaskObject::setRif(AbstractTaskRunnableInterface * pRif)
 {
-    delete rif;
+    mpRif = pRif;
+}
+
+void AbstractTaskObject::deleteInterface(void)
+{
+    delete mpRif;
     QObject::deleteLater();
 }

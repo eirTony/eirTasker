@@ -15,6 +15,25 @@ AbstractTaskRunnableInterface::
     QRunnable::setAutoDelete(false);
 }
 
+void AbstractTaskRunnableInterface::setMethods(const AbstractKey::List
+                                               & methodList)
+{
+    mMethodList = methodList;
+}
+
+// virtual
+AbstractKey::List
+    AbstractTaskRunnableInterface::supportedMethods(void) const
+{
+    return mMethodList;
+}
+
+// virtual
+bool AbstractTaskRunnableInterface::supports(AbstractKey method)
+{
+    return mMethodList.contains(method);
+}
+
 AbstractTaskResultsEntity
     AbstractTaskRunnableInterface::results(void) const
 {
@@ -30,7 +49,7 @@ AbstractTaskResultsEntity
 AbstractTaskResultsEntity AbstractTaskRunnableInterface::takeResults(void)
 {
     AbstractTaskResultsEntity entity = results();
-    cmpObject->deleteInterface(this);
+    cmpObject->deleteInterface();
     return entity;
 }
 

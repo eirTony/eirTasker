@@ -22,7 +22,11 @@ SOURCES += main.cpp \
     AbstractTaskConfigurationEntity.cpp \
     AbstractTaskResultsEntity.cpp \
     AbstractTaskInputEntity.cpp \
-    StdIODevice.cpp
+    StdIODevice.cpp \
+    VectorMathInterface.cpp \
+    TaskMethodKey.cpp \
+    AbstractId.cpp \
+    StdIO.cpp
 
 HEADERS += \
     TaskConsole.h \
@@ -37,5 +41,9 @@ HEADERS += \
     AbstractTaskConfigurationEntity.h \
     AbstractTaskResultsEntity.h \
     AbstractTaskInputEntity.h \
-    StdIODevice.h
+    StdIODevice.h \
+    VectorMathInterface.h \
+    TaskMethodKey.h \
+    AbstractId.h \
+    StdIO.h
 

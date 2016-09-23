@@ -3,9 +3,10 @@
 
 #include <QThread>
 
-#include <QIODevice>
+//#include <QIODevice>
 
-#include "StdIODevice.h"
+//#include "StdIODevice.h"
+#include "StdIO.h"
 
 class TaskConsole : public QThread
 {
@@ -18,10 +19,11 @@ signals:
 public slots:
 
 private slots:
-    void init(void);
+  //  void init(void);
 
 private:
-    StdIODevice * mpStdIO = 0;
+//    StdIODevice * mpStdIO = 0;
+    StdIO smStdIO;
 };
 
 #endif // TASKCONSOLE_H

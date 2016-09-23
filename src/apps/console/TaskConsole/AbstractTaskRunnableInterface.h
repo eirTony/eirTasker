@@ -8,6 +8,7 @@
 #include "AbstractTaskConfigurationEntity.h"
 #include "AbstractTaskInputEntity.h"
 #include "AbstractTaskResultsEntity.h"
+#include "TaskMethodKey.h"
 
 // QRunnable::run(void) is pure virual, therefore we are pure virtual
 
@@ -19,6 +20,9 @@ public:
                                   const AbstractTaskContextEntity & context,
                                   const AbstractTaskConfigurationEntity & config,
                                   const AbstractTaskInputEntity & input);
+    void setMethods(const AbstractKey::List & methodList);
+    virtual AbstractKey::List supportedMethods(void) const;
+    virtual bool supports(AbstractKey method);
     AbstractTaskResultsEntity results(void) const;
     AbstractTaskResultsEntity operator() (void) const;
     AbstractTaskResultsEntity takeResults(void);
@@ -30,6 +34,7 @@ protected:
 
 private:
     AbstractTaskObject * const cmpObject = 0;
+    AbstractKey::List mMethodList;
     AbstractTaskContextEntity mContext;
     AbstractTaskConfigurationEntity mConfig;
     AbstractTaskInputEntity mInput;
