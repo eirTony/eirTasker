@@ -17,6 +17,7 @@ class AbstractTaskRunnableInterface : public QRunnable
 public:
     AbstractTaskRunnableInterface(void);
     AbstractTaskRunnableInterface(AbstractTaskObject * taskObject,
+                                  const AbstractKey::List & keys,
                                   const AbstractTaskContextEntity & context,
                                   const AbstractTaskConfigurationEntity & config,
                                   const AbstractTaskInputEntity & input);

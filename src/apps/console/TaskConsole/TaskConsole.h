@@ -19,11 +19,11 @@ signals:
 public slots:
 
 private slots:
-  //  void init(void);
+    void init(void);
 
 private:
 //    StdIODevice * mpStdIO = 0;
-    StdIO smStdIO;
+    static StdIO * smpStdIO;
 };
 
 #endif // TASKCONSOLE_H

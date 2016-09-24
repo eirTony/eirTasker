@@ -4,10 +4,12 @@ AbstractTaskRunnableInterface::AbstractTaskRunnableInterface(void) {;}
 
 AbstractTaskRunnableInterface::
     AbstractTaskRunnableInterface(AbstractTaskObject * taskObject,
+                              const AbstractKey::List & keys,
                               const AbstractTaskContextEntity & context,
                               const AbstractTaskConfigurationEntity & config,
                               const AbstractTaskInputEntity & input)
     : cmpObject(taskObject)
+    , mMethodList(keys)
     , mContext(context)
     , mConfig(config)
     , mInput(input)

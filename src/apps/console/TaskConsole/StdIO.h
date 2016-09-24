@@ -3,8 +3,8 @@
 
 #include <QObject>
 
-#include <QIODevice>
-#include <QTextStream>
+class QFile;
+class QTextStream;
 
 class StdIO : public QObject
 {
@@ -17,7 +17,12 @@ signals:
 public slots:
 
 public: // static
-    static QTextStream out(stdout);
+//    static QTextStream out(stdout);
+//    static QTextStream out(std::cout);
+    static QTextStream * out;
+
+private: // static
+//    static QFile * spOutFile;
 };
 
 #endif // STDIO_H
