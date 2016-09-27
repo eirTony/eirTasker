@@ -4,7 +4,7 @@ AbstractTaskRunnableInterface::AbstractTaskRunnableInterface(void) {;}
 
 AbstractTaskRunnableInterface::
     AbstractTaskRunnableInterface(AbstractTaskObject * taskObject,
-                              const AbstractKey::List & keys,
+                              const MethodKeyList & keys,
                               const AbstractTaskContextEntity & context,
                               const AbstractTaskConfigurationEntity & config,
                               const AbstractTaskInputEntity & input)
@@ -17,15 +17,13 @@ AbstractTaskRunnableInterface::
     QRunnable::setAutoDelete(false);
 }
 
-void AbstractTaskRunnableInterface::setMethods(const AbstractKey::List
-                                               & methodList)
+void AbstractTaskRunnableInterface::setMethods(const MethodKeyList & methodList)
 {
     mMethodList = methodList;
 }
 
 // virtual
-AbstractKey::List
-    AbstractTaskRunnableInterface::supportedMethods(void) const
+AbstractTaskRunnableInterface::MethodKeyList AbstractTaskRunnableInterface::supportedMethods(void) const
 {
     return mMethodList;
 }

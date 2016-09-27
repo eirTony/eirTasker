@@ -3,6 +3,8 @@
 
 #include <QRunnable>
 
+#include <QList>
+
 #include "AbstractTaskObject.h"
 #include "AbstractTaskContextEntity.h"
 #include "AbstractTaskConfigurationEntity.h"
@@ -14,15 +16,18 @@
 
 class AbstractTaskRunnableInterface : public QRunnable
 {
+    typedef AbstractKey MethodKey;
+    typedef MethodKey::List MethodKeyList;
+
 public:
     AbstractTaskRunnableInterface(void);
     AbstractTaskRunnableInterface(AbstractTaskObject * taskObject,
-                                  const AbstractKey::List & keys,
+                                  const MethodKeyList & keys,
                                   const AbstractTaskContextEntity & context,
                                   const AbstractTaskConfigurationEntity & config,
                                   const AbstractTaskInputEntity & input);
-    void setMethods(const AbstractKey::List & methodList);
-    virtual AbstractKey::List supportedMethods(void) const;
+    void setMethods(const MethodKeyList & methodList);
+    virtual MethodKeyList supportedMethods(void) const;
     virtual bool supports(AbstractKey method);
     AbstractTaskResultsEntity results(void) const;
     AbstractTaskResultsEntity operator() (void) const;
@@ -35,7 +40,7 @@ protected:
 
 private:
     AbstractTaskObject * const cmpObject = 0;
-    AbstractKey::List mMethodList;
+    MethodKeyList mMethodList;
     AbstractTaskContextEntity mContext;
     AbstractTaskConfigurationEntity mConfig;
     AbstractTaskInputEntity mInput;

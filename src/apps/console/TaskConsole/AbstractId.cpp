@@ -19,7 +19,7 @@ void AbstractId::set(const QString & s)
 {
     QStringList::clear();
     QString in(s.simplified());
-    QStringList qsl(s.split(scSeparator, QString::SplitBehavior::SkipEmptyParts));
+    QStringList qsl(in.split(scSeparator, QString::SplitBehavior::SkipEmptyParts));
     QStringList::append(qsl);
 }
 

@@ -3,11 +3,6 @@
 
 #include <QThread>
 
-//#include <QIODevice>
-
-//#include "StdIODevice.h"
-#include "StdIO.h"
-
 class TaskConsole : public QThread
 {
     Q_OBJECT
@@ -22,8 +17,6 @@ private slots:
     void init(void);
 
 private:
-//    StdIODevice * mpStdIO = 0;
-    static StdIO * smpStdIO;
 };
 
 #endif // TASKCONSOLE_H
