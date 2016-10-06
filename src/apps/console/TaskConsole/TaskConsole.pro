@@ -26,7 +26,15 @@ SOURCES += main.cpp \
     VectorMathInterface.cpp \
     TaskMethodKey.cpp \
     AbstractId.cpp \
-    StdIO.cpp
+    StdIO.cpp \
+    Boolean.cpp \
+    BooleanArray.cpp \
+    VariantName.cpp \
+    VariantGroup.cpp \
+    Variant.cpp \
+    VariantMap.cpp \
+    VariantId.cpp \
+    VectorMathInputEntitiy.cpp
 
 HEADERS += \
     TaskConsole.h \
@@ -45,5 +53,13 @@ HEADERS += \
     VectorMathInterface.h \
     TaskMethodKey.h \
     AbstractId.h \
-    StdIO.h
+    StdIO.h \
+    Boolean.h \
+    BooleanArray.h \
+    VariantName.h \
+    VariantGroup.h \
+    Variant.h \
+    VariantMap.h \
+    VariantId.h \
+    VectorMathInputEntitiy.h
 

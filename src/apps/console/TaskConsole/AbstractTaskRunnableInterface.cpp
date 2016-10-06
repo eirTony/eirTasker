@@ -29,7 +29,7 @@ AbstractTaskRunnableInterface::MethodKeyList AbstractTaskRunnableInterface::supp
 }
 
 // virtual
-bool AbstractTaskRunnableInterface::supports(AbstractKey method)
+bool AbstractTaskRunnableInterface::supports(const AbstractKey method)
 {
     return mMethodList.contains(method);
 }

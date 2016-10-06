@@ -6,11 +6,11 @@
 class VectorMathInterface : public AbstractTaskRunnableInterface
 {
 public:
-    VectorMathInterface(void);
-    VectorMathInterface(QObject * parent,
-                        const AbstractTaskContextEntity & context,
-                        const AbstractTaskConfigurationEntity & config,
-                        const AbstractTaskInputEntity & input);
+    VectorMathInterface(QObject * parent=0);
+    VectorMathInterface(const AbstractTaskInputEntity & input,
+                        const AbstractTaskConfigurationEntity & config=AbstractTaskConfigurationEntity(),
+                        const AbstractTaskContextEntity & context=AbstractTaskContextEntity(),
+                        QObject * parent=0);
 
 public:
     const static TaskMethodKey csmSummationKey;

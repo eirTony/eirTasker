@@ -2,6 +2,9 @@
 
 #include <stdio.h>
 
+#include <QtDebug>
+
+#include <QChar>
 #include <QFile>
 #include <QTextStream>
 #include <QVector>
@@ -63,15 +66,19 @@ QFile * StdIO::file(const StdName std)
         }
         else if (pf)
         {
-#if 0
+#if 1
             f->open(pf, QIODevice::Text | QIODevice::WriteOnly
-                                | QIODevice::Append);
+                             /*   | QIODevice::Append */);
 #else
             f->setFileName("./standardout.txt");
             f->open(QIODevice::Text | QIODevice::WriteOnly
                                 | QIODevice::Append);
 #endif
-            if ( ! f->isWritable()) qCritical("std output not writeable");
+            if ( ! f->isWritable())
+            {
+                qWarning() << "std output" << pf << "open error" << f->error() << f->errorString();
+                qCritical("std output not writeable");
+            }
         }
         else
         {
@@ -115,7 +122,8 @@ void StdIO::write(const StdIO::StdName std,
                  const QVariant & var4)
 {
     QFile * f = file(std);  Q_CHECK_PTR(f);
-    QByteArray ba = formatted(message + "\r\n", var1, var2, var3, var4);
+    QByteArray ba = formatted(message + "\r\n",
+                              var1, var2, var3, var4);
     if ( ! ba.isEmpty()) f->write(ba);
     f->flush();
 }
