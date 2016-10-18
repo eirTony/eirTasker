@@ -34,7 +34,9 @@ SOURCES += main.cpp \
     Variant.cpp \
     VariantMap.cpp \
     VariantId.cpp \
-    VectorMathInputEntitiy.cpp
+    VectorMathInputEntitiy.cpp \
+    Flags.cpp \
+    Index.cpp
 
 HEADERS += \
     TaskConsole.h \
@@ -61,5 +63,7 @@ HEADERS += \
     Variant.h \
     VariantMap.h \
     VariantId.h \
-    VectorMathInputEntitiy.h
+    VectorMathInputEntitiy.h \
+    Flags.h \
+    Index.h
 
