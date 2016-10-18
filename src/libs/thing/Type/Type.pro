@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += xml
-
+QT       += testlib
 QT       -= gui
 
 TARGET = Type
@@ -13,10 +13,14 @@ TEMPLATE = lib
 
 DEFINES += TYPE_LIBRARY
 
-SOURCES += Type.cpp
+SOURCES += Type.cpp \
+    Flags.cpp \
+    Index.cpp
 
 HEADERS += Type.h\
-        type_global.h
+        type_global.h \
+    Flags.h \
+    Index.h
 
 unix {
     target.path = /usr/lib

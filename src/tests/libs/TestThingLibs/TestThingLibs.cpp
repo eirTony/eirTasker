@@ -13,6 +13,7 @@ private Q_SLOTS:
     void cleanupTestCase();
     void testCase1_data();
     void testCase1();
+    void testIndex(void);
 };
 
 TestThingLibs::TestThingLibs()
@@ -37,6 +38,15 @@ void TestThingLibs::testCase1()
 {
     QFETCH(QString, data);
     QVERIFY2(true, "Failure");
+}
+
+//#include <thing/Type.h>
+//#include "../../libs/thing/Type/Index.h"
+#include "../../../libs/thing/Type/Index.h"
+
+void TestThingLibs::testIndex(void)
+{
+    TestIndex tIndex;
 }
 
 QTEST_APPLESS_MAIN(TestThingLibs)

@@ -17,3 +17,7 @@ TEMPLATE = app
 
 SOURCES += TestThingLibs.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
+
+INCLUDEPATH *= ../../../libs/thing
+LIBS *= -lType
+LIBS *= -L/tmp/libs/thing/Type
