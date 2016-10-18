@@ -1,6 +1,7 @@
 #include "AbstractTaskRunnableInterface.h"
 
-AbstractTaskRunnableInterface::AbstractTaskRunnableInterface(void) {;}
+AbstractTaskRunnableInterface::AbstractTaskRunnableInterface(QObject * parent)
+    : cmpObject(new AbstractTaskObject(parent)) {;}
 
 AbstractTaskRunnableInterface::
     AbstractTaskRunnableInterface(AbstractTaskObject * taskObject,

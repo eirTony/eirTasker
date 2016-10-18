@@ -20,7 +20,7 @@ class AbstractTaskRunnableInterface : public QRunnable
     typedef MethodKey::List MethodKeyList;
 
 public:
-    AbstractTaskRunnableInterface(void);
+    AbstractTaskRunnableInterface(QObject * parent=0);
     AbstractTaskRunnableInterface(AbstractTaskObject * taskObject,
                                   const MethodKeyList & keys,
                                   const AbstractTaskContextEntity & context,

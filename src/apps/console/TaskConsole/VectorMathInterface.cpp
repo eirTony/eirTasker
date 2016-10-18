@@ -2,12 +2,13 @@
 
 const TaskMethodKey VectorMathInterface::csmSummationKey;
 
-VectorMathInterface::VectorMathInterface(void) {;}
+VectorMathInterface::VectorMathInterface(QObject * parent)
+    : AbstractTaskRunnableInterface(new AbstractTaskObject(parent))  {;}
 
 VectorMathInterface::VectorMathInterface(const AbstractTaskInputEntity & input,
-                                         const AbstractTaskConfigurationEntity & config=AbstractTaskConfigurationEntity(),
-                                         const AbstractTaskContextEntity & context=AbstractTaskContextEntity(),
-                                         QObject * parent=0)
+                                         const AbstractTaskConfigurationEntity & config,
+                                         const AbstractTaskContextEntity & context,
+                                         QObject * parent)
     : AbstractTaskRunnableInterface(new AbstractTaskObject(parent),
                                     TaskMethodKey::List()
                                         << TaskMethodKey("VectorMath/Summation"),
