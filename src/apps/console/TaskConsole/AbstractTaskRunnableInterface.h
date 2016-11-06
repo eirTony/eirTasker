@@ -28,7 +28,7 @@ public:
                                   const AbstractTaskInputEntity & input);
     void setMethods(const MethodKeyList & methodList);
     virtual MethodKeyList supportedMethods(void) const;
-    virtual bool supports(AbstractKey method);
+    virtual bool supports(const MethodKey method);
     AbstractTaskResultsEntity results(void) const;
     AbstractTaskResultsEntity operator() (void) const;
     AbstractTaskResultsEntity takeResults(void);
@@ -39,7 +39,7 @@ protected:
     void notifyFinished(const bool ok);
 
 private:
-    AbstractTaskObject * const cmpObject = 0;
+    AbstractTaskObject * const cmpTaskObject = 0;
     MethodKeyList mMethodList;
     AbstractTaskContextEntity mContext;
     AbstractTaskConfigurationEntity mConfig;

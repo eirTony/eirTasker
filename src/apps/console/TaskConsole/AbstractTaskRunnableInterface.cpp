@@ -1,7 +1,7 @@
 #include "AbstractTaskRunnableInterface.h"
 
 AbstractTaskRunnableInterface::AbstractTaskRunnableInterface(QObject * parent)
-    : cmpObject(new AbstractTaskObject(parent)) {;}
+    : cmpTaskObject(new AbstractTaskObject(parent)) {;}
 
 AbstractTaskRunnableInterface::
     AbstractTaskRunnableInterface(AbstractTaskObject * taskObject,
@@ -9,7 +9,7 @@ AbstractTaskRunnableInterface::
                               const AbstractTaskContextEntity & context,
                               const AbstractTaskConfigurationEntity & config,
                               const AbstractTaskInputEntity & input)
-    : cmpObject(taskObject)
+    : cmpTaskObject(taskObject)
     , mMethodList(keys)
     , mContext(context)
     , mConfig(config)
@@ -30,7 +30,7 @@ AbstractTaskRunnableInterface::MethodKeyList AbstractTaskRunnableInterface::supp
 }
 
 // virtual
-bool AbstractTaskRunnableInterface::supports(const AbstractKey method)
+bool AbstractTaskRunnableInterface::supports(const MethodKey method)
 {
     return mMethodList.contains(method);
 }
@@ -50,7 +50,7 @@ AbstractTaskResultsEntity
 AbstractTaskResultsEntity AbstractTaskRunnableInterface::takeResults(void)
 {
     AbstractTaskResultsEntity entity = results();
-    cmpObject->deleteInterface();
+    cmpTaskObject->deleteInterface();
     return entity;
 }
 
