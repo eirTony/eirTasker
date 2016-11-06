@@ -1,6 +1,6 @@
 #include "EntityLib.h"
 
-EntityLib::EntityLib()
+EntityLib::EntityLib(void)
 {
 
 }

@@ -1,11 +1,11 @@
 #ifndef ENTITYTYPE_H
 #define ENTITYTYPE_H
+#include "EntityLib.h"
 
-
-class EntityType : public EightCC
+class ENTITYSHARED_EXPORT EntityType // : public EightCC
 {
 public:
-    EntityType();
+    EntityType(void);
 };
 
 #endif // ENTITYTYPE_H
