@@ -1,4 +1,4 @@
-#include "EntityData.h"
+#include "CodedEntity.h"
 
 CodedEntity::CodedEntity(void)
 {

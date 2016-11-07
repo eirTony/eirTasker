@@ -1,8 +1,8 @@
 #ifndef ENTITYENCODING_H
 #define ENTITYENCODING_H
+#include "EntityLib.h"
 
-
-class EntityEncoding
+class ENTITYSHARED_EXPORT EntityEncoding : public EightCC
 {
 public:
     EntityEncoding(void);

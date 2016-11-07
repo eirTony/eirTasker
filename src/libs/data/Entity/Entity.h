@@ -16,8 +16,8 @@ public:
     Entity(void);
 
     Boolean encode(const EntityEncoding encoding,
-                   const EntityData & encoded);
-    EntityData decode(const EntityEncoding encoding);
+                   const CodedEntity & encoded);
+    CodedEntity decode(const EntityEncoding encoding);
 };
 
 #endif // ENTITY_H

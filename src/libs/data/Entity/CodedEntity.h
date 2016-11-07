@@ -1,5 +1,5 @@
-#ifndef ENTITYDATA_H
-#define ENTITYDATA_H
+#ifndef CODEDENTITY_H
+#define CODEDENTITY_H
 #include "EntityLib.h"
 
 #include <QVariant>
@@ -10,4 +10,4 @@ public:
     CodedEntity(void);
 };
 
-#endif // ENTITYDATA_H
+#endif // CODEDENTITY_H

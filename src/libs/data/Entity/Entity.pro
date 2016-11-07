@@ -16,7 +16,7 @@ DEFINES += ENTITY_LIBRARY
 SOURCES += Entity.cpp \
     EntityLib.cpp \
     EntityEncoding.cpp \
-    EntityData.cpp \
+    CodedEntity.cpp \
     EntityType.cpp \
     EntityKey.cpp
 
@@ -24,7 +24,7 @@ HEADERS += Entity.h\
         entity_global.h \
     EntityLib.h \
     EntityEncoding.h \
-    EntityData.h \
+    CodedEntity.h \
     EntityType.h \
     EntityKey.h
 
