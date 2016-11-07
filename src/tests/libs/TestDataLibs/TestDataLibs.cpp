@@ -1,12 +1,12 @@
 #include <QString>
 #include <QtTest>
 
-class TestThingLibs : public QObject
+class TestDataLibs : public QObject
 {
     Q_OBJECT
 
 public:
-    TestThingLibs();
+    TestDataLibs();
 
 private Q_SLOTS:
     void initTestCase();
@@ -16,25 +16,25 @@ private Q_SLOTS:
     void testIndex(void);
 };
 
-TestThingLibs::TestThingLibs()
+TestDataLibs::TestDataLibs()
 {
 }
 
-void TestThingLibs::initTestCase()
+void TestDataLibs::initTestCase()
 {
 }
 
-void TestThingLibs::cleanupTestCase()
+void TestDataLibs::cleanupTestCase()
 {
 }
 
-void TestThingLibs::testCase1_data()
+void TestDataLibs::testCase1_data()
 {
     QTest::addColumn<QString>("data");
     QTest::newRow("0") << QString();
 }
 
-void TestThingLibs::testCase1()
+void TestDataLibs::testCase1()
 {
     QFETCH(QString, data);
     QVERIFY2(true, "Failure");
@@ -42,13 +42,13 @@ void TestThingLibs::testCase1()
 
 //#include <thing/Type.h>
 //#include "../../libs/thing/Type/Index.h"
-#include "../../../libs/thing/Type/Index.h"
+#include "../../../libs/data/Type/Index.h"
 
-void TestThingLibs::testIndex(void)
+void TestDataLibs::testIndex(void)
 {
     TestIndex tIndex;
 }
 
-QTEST_APPLESS_MAIN(TestThingLibs)
+QTEST_APPLESS_MAIN(TestDataLibs)
 
-#include "TestThingLibs.moc"
+#include "TestDataLibs.moc"

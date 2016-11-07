@@ -8,16 +8,16 @@ QT       += testlib
 
 QT       -= gui
 
-TARGET = TestThingLibs
+TARGET = TestDataLibs
 CONFIG   += console
 CONFIG   -= app_bundle
 
 TEMPLATE = app
 
 
-SOURCES += TestThingLibs.cpp
+SOURCES += TestDataLibs.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 INCLUDEPATH *= ../../../libs/thing
 LIBS *= -lType
-LIBS *= -L/tmp/libs/thing/Type
+LIBS *= -L/tmp/libs/data/Type
