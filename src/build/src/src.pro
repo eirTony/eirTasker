@@ -3,6 +3,7 @@ TEMPLATE = subdirs
 SUBDIRS += \
     ../../apps \
     ../../libs \
-    ../../tests
+    ../../tests \
+    Notes
 
 DESTDIR = /tmp/eirTasker/bin

@@ -4,10 +4,9 @@
 
 #include <QSettings>
 
-#include "EntityData.h"
-#include "EntityEncoding.h"
-
-typedef bool Boolean; // FORNOW
+#include "CodedEntity.h"
+//#include "EntityEncoding.h"
+class EntityEncoding;
 
 class ENTITYSHARED_EXPORT Entity : public QSettings
 {
@@ -15,9 +14,9 @@ class ENTITYSHARED_EXPORT Entity : public QSettings
 public:
     Entity(void);
 
-    Boolean encode(const EntityEncoding encoding,
+    Boolean encode(const EntityEncoding & encoding,
                    const CodedEntity & encoded);
-    CodedEntity decode(const EntityEncoding encoding);
+    CodedEntity decode(const EntityEncoding & encoding);
 };
 
 #endif // ENTITY_H
