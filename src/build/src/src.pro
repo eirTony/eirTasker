@@ -4,6 +4,6 @@ SUBDIRS += \
     ../../apps \
     ../../libs \
     ../../tests \
-    Notes
+    ../../Notes
 
 DESTDIR = /tmp/eirTasker/bin
