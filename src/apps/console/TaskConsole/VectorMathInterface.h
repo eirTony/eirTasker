@@ -1,6 +1,7 @@
 #ifndef VECTORMATHINTERFACE_H
 #define VECTORMATHINTERFACE_H
 
+#if 0
 #include "AbstractTaskRunnableInterface.h"
 
 class VectorMathInterface : public AbstractTaskRunnableInterface
@@ -15,5 +16,5 @@ public:
 public:
     const static TaskMethodKey csmSummationKey;
 };
-
+#endif
 #endif // VECTORMATHINTERFACE_H

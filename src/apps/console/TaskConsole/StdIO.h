@@ -3,9 +3,11 @@
 
 #include <QObject>
 
-#include "AbstractId.h"
-#include "AbstractName.h"
-#include "AbstractTaskRunnableInterface.h"
+#include <QVariant>
+
+//#include "AbstractId.h"
+//#include "AbstractName.h"
+//#include "AbstractTaskRunnableInterface.h"
 
 class QFile;
 class QTextStream;
@@ -36,10 +38,10 @@ public:
         SizeLevel
     };
     typedef QTextStream * StdIOStream;
-    typedef AbstractName StreamName;
-    typedef QPair<StdName, StreamName> StdStreamName;
+//    typedef AbstractName StreamName;
+//    typedef QPair<StdName, StreamName> StdStreamName;
     typedef QVector<QFile *> FilePtrList;
-    typedef QMap<StdStreamName, StdIOStream *> StdStreamNamePtrMap;
+//    typedef QMap<StdStreamName, StdIOStream *> StdStreamNamePtrMap;
 
 public:
     explicit StdIO(QObject * parent=0);
@@ -59,7 +61,7 @@ protected: // static
     static FILE * fp(const StdName std);
     static QFile * file(const StdName std);
     static StdIOStream * stream(const StdName std);
-    static StdIOStream * stream(const StdStreamName & stdStreamName);
+//    static StdIOStream * stream(const StdStreamName & stdStreamName);
     static QByteArray formatted(const QString & message,
                      const QVariant & var1=QVariant(),
                      const QVariant & var2=QVariant(),
@@ -75,7 +77,7 @@ protected: // static
 
 private: // static
     static FilePtrList smFilePtrList;
-    static StdStreamNamePtrMap smStdStreamNamePtrMap;
+//    static StdStreamNamePtrMap smStdStreamNamePtrMap;
 //    static MethodKeyList smStreamNameMap;
 };
 

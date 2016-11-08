@@ -1,5 +1,7 @@
 #include "VectorMathInterface.h"
 
+#if 0
+
 const TaskMethodKey VectorMathInterface::csmSummationKey;
 
 VectorMathInterface::VectorMathInterface(QObject * parent)
@@ -18,3 +20,4 @@ VectorMathInterface::VectorMathInterface(const AbstractTaskInputEntity & input,
 
 
 
+#endif

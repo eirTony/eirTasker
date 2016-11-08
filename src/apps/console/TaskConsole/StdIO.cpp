@@ -12,7 +12,7 @@
 // static
 
 StdIO::FilePtrList StdIO::smFilePtrList(StdIO::SizeStd);
-StdIO::StdStreamNamePtrMap StdIO::smStdStreamNamePtrMap;
+//StdIO::StdStreamNamePtrMap StdIO::smStdStreamNamePtrMap;
 
 
 StdIO::StdIO(QObject * parent)

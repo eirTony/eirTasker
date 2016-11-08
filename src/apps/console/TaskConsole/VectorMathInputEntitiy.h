@@ -1,9 +1,9 @@
 #ifndef VECTORMATHINPUTENTITIY_H
 #define VECTORMATHINPUTENTITIY_H
 
-#include "AbstractTaskInputEntity.h"
+//#include "AbstractTaskInputEntity.h"
 
-class VectorMathInputEntitiy : public AbstractTaskInputEntity
+class VectorMathInputEntitiy //: public AbstractTaskInputEntity
 {
 public:
     VectorMathInputEntitiy(void);

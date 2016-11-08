@@ -1,6 +1,8 @@
 #ifndef TASKMETHODKEY_H
 #define TASKMETHODKEY_H
 
+#if 0
+
 #include "AbstractKey.h"
 #include "AbstractId.h"
 
@@ -12,4 +14,5 @@ public:
     TaskMethodKey(const AbstractId &id);
 };
 
+#endif
 #endif // TASKMETHODKEY_H
