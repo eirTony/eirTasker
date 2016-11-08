@@ -3,27 +3,27 @@
 #include <QtTest>
 #include <QStringList>
 
-Index::Index(const int x) : mInt(x) {;}
+//Index::Index(const int x) : mInt(x) {;}
 
-TestIndex::TestIndex(void)
+TestListIndex::TestListIndex(void)
 {
-    TestCtors();
+    TestListCtors();
 }
 
-void TestIndex::TestCtors(void)
+void TestListIndex::TestListCtors(void)
 {
-    QStringList qslNull;
-    Index xNull;
-    QCOMPARE(xNull.isValid(qslNull.size()), false);
+    QList<int> qliNull;
+    QListIndex<int> xNull(qliNull);
+    QCOMPARE(xNull.isValid(), false);
 }
 
-
-bool Index::isValid(const int size) const
+#if 0
+bool Index::isValid(void) const
 {
     return (mInt >= 0) && (mInt < size);
 }
 
-int Index::valid(const int size) const
+int Index::valid(void) const
 {
     if (isUnder(size)) return 0;
     if (isOver(size)) return size-1;
@@ -35,13 +35,14 @@ Index::operator int (void) const
     return mInt;
 }
 
-bool Index::isUnder(const int size) const
+bool Index::isUnder(void) const
 {
     (void)size;
     return mInt < 0;
 }
 
-bool Index::isOver(const int size) const
+bool Index::isOver(void) const
 {
     return mInt >= size;
 }
+#endif

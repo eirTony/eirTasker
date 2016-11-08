@@ -3,7 +3,7 @@
 
 #include <QBitArray>
 
-#include "Index.h"
+//#include "Index.h"
 
 class Flags
 {
@@ -11,7 +11,7 @@ public:
     Flags(const int size=0,
           const bool is=false);
     bool isNull(void) const;
-    bool isNull(const Index x) const;
+//    bool isNull(const Index x) const;
 
 private:
     QBitArray mIsBits;

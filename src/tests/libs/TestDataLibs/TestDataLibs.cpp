@@ -46,7 +46,7 @@ void TestDataLibs::testCase1()
 
 void TestDataLibs::testIndex(void)
 {
-    TestIndex tIndex;
+    TestListIndex tIndex;
 }
 
 QTEST_APPLESS_MAIN(TestDataLibs)

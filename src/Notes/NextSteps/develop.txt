@@ -5,8 +5,9 @@ eirTasker NextSteps Notes: /src/Notes/NextSteps/develop.txt
     + Top Level .pri
         - DESTDIR (where????!)
         - std=c++-10 ish
-    + exile Abstract classes from TaskConsole
-    + eliminate things project (& get -lType back)
+    x exile Abstract classes from TaskConsole
+    x eliminate things project
+    + (& get -lType back)
     + investigate Boost.Log item for SQLish columns
     + either way get basic text logs going sooner than later
         - user (stdout)

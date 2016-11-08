@@ -20,7 +20,8 @@ SOURCES += Type.cpp \
 HEADERS += Type.h\
         type_global.h \
     Flags.h \
-    Index.h
+    Index.h \
+    TIndex.h
 
 unix {
     target.path = /usr/lib

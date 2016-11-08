@@ -2,29 +2,19 @@
 #define INDEX_H
 #include "Type.h"
 
-class TYPESHARED_EXPORT Index
+#include <QList>
+
+#include "TIndex.h"
+
+DECLARE_INDEX(QList)
+
+class TestListIndex
 {
 public:
-    Index(const int x=-1);
-    bool isValid(const int size) const;
-    int valid(const int size) const;
-    operator int (void) const;
+    TestListIndex(void);
 
 private:
-    bool isUnder(const int size) const;
-    bool isOver(const int size) const;
-
-private:
-    int mInt;
-};
-
-class TestIndex
-{
-public:
-    TestIndex(void);
-
-private:
-    void TestCtors(void);
+    void TestListCtors(void);
 };
 
 #endif // INDEX_H
