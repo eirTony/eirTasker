@@ -11,7 +11,7 @@ public:
     BaseLib(void);
 
 private:
-    BinaryBase * cmpBase = 0;
+    BinaryBase * cmpBase;
 };
 
 #endif // BASELIB_H

@@ -1,6 +1,6 @@
 #include "BinaryBase.h"
 
-#include <QApplication>
+#include <QCoreApplication>
 
 BinaryBase::BinaryBase(QObject * parent)
     : QObject(parent ? parent : qApp)

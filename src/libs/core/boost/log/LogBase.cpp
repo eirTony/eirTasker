@@ -1,6 +1,6 @@
 #include "LogBase.h"
 
-LogBase::LogBase()
+LogBase::LogBase(void)
 {
 
 }

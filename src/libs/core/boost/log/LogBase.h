@@ -5,7 +5,7 @@
 class LogBase
 {
 public:
-    LogBase();
+    LogBase(void);
 };
 
 #endif // LOGBASE_H
