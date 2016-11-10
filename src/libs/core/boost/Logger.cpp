@@ -1,6 +1,7 @@
 #include "Logger.h"
 
-Logger::Logger(void)
+Logger::Logger(QObject * parent)
+    : QObject(parent)
 {
 
 }

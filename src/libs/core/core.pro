@@ -2,5 +2,6 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     boost \
-    base
+    base \
+    Log
 

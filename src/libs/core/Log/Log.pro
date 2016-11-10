@@ -1,22 +1,20 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2016-11-09T02:19:25
+# Project created by QtCreator 2016-11-09T03:15:03
 #
 #-------------------------------------------------
 
 QT       -= gui
 
-TARGET = base
+TARGET = Log
 TEMPLATE = lib
 
-DEFINES += BASE_LIBRARY
+DEFINES += LOG_LIBRARY
 
-SOURCES += BaseLib.cpp \
-    BinaryBase.cpp
+SOURCES += LogLib.cpp
 
-HEADERS += BaseLib.h\
-        base_global.h \
-    BinaryBase.h
+HEADERS += LogLib.h\
+        log_global.h
 
 unix {
     target.path = /usr/lib

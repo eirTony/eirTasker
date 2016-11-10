@@ -3,10 +3,11 @@
 
 #include <QObject>
 
-class Logger
+class Logger : public QObject
 {
+    Q_OBJECT
 public:
-    Logger();
+    Logger(QObject * parent=0);
 };
 
 #endif // LOGGER_H
