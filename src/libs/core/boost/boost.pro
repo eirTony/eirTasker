@@ -12,25 +12,25 @@ TEMPLATE = lib
 DEFINES += BOOST_LIBRARY
 
 SOURCES += BoostLib.cpp \
-    LogSource.cpp \
-    LogBase.cpp \
-    Logger.cpp \
-    LogSink.cpp \
-    LogFilter.cpp \
-    LogRecord.cpp \
-    LogAttribute.cpp \
-    LogFormatter.cpp
+    ./log/LogSource.cpp \
+    ./log/LogBase.cpp \
+    ./log/Logger.cpp \
+    ./log/LogSink.cpp \
+    ./log/LogFilter.cpp \
+    ./log/LogRecord.cpp \
+    ./log/LogAttribute.cpp \
+    ./log/LogFormatter.cpp
 
 HEADERS += BoostLib.h\
         boost_global.h \
-    LogSource.h \
-    LogBase.h \
-    Logger.h \
-    LogSink.h \
-    LogFilter.h \
-    LogRecord.h \
-    LogAttribute.h \
-    LogFormatter.h
+    ./log/LogSource.h \
+    ./log/LogBase.h \
+    ./log/Logger.h \
+    ./log/LogSink.h \
+    ./log/LogFilter.h \
+    ./log/LogRecord.h \
+    ./log/LogAttribute.h \
+    ./log/LogFormatter.h
 
 unix {
     target.path = /usr/lib
