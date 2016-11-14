@@ -3,6 +3,8 @@ QT += core
 
 QMAKE_CXXFLAGS *= -std=c++11
 
+INCLUDEPATH *= /usr/include/boost
+
 TARGET = TaskConsole
 CONFIG += console
 CONFIG -= app_bundle
@@ -25,3 +27,4 @@ HEADERS += \
     StdIO.h \
     VectorMathInputEntitiy.h
 
+LIBS *= -L/usr/lib/i386-linux-gnu -lboost_system -lboost_log
