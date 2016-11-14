@@ -5,5 +5,3 @@ SUBDIRS += \
     ../../libs \
     ../../tests \
     ../../Notes
-
-DESTDIR = /tmp/eirTasker/bin

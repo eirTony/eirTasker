@@ -13,6 +13,8 @@ TEMPLATE = lib
 
 DEFINES += TYPE_LIBRARY
 
+include(../data.pri)
+
 SOURCES += Type.cpp \
     Flags.cpp \
     Index.cpp
