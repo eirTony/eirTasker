@@ -6,7 +6,7 @@
 typedef bool Boolean; // FORNOW
 //typedef quint64 EightCC; // FORNOW
 class EightCC { quint64 mCC; }; //FORNOW
-typedef QBitArray BitKey; // FORNOW
+//typedef QBitArray BitKey; // FORNOW
 
 class ENTITYSHARED_EXPORT EntityLib
 {
