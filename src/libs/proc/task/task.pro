@@ -19,14 +19,16 @@ SOURCES += TaskLib.cpp \
     AbstractTask.cpp \
     AtomicTask.cpp \
     CompositeTask.cpp \
-    TaskVector.cpp
+    TaskVector.cpp \
+    TaskInterface.cpp
 
 HEADERS += TaskLib.h\
         task_global.h \
     AbstractTask.h \
     AtomicTask.h \
     CompositeTask.h \
-    TaskVector.h
+    TaskVector.h \
+    TaskInterface.h
 
 unix {
     target.path = /usr/lib
