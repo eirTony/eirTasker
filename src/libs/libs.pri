@@ -1,3 +1,3 @@
 # libs.pri
 
-include (../../../../build/src.pri)
+include (../build/src.pri)

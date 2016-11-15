@@ -9,11 +9,15 @@
 class TASKSHARED_EXPORT AbstractTask
         : public TaskInterface
 {
+
 public:
     AbstractTask(void);
 
 private:
+    EntityKey::List mContextKeys;
+    EntityKey mConfigKey;
     EntityKey mInputKey;
+    EntityKey mResultKey;
 };
 
 #endif // ABSTRACTTASK_H

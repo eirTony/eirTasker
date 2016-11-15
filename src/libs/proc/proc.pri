@@ -1,3 +1,3 @@
 # proc.pri
 
-include(../../libs.pri)
+include(../libs.pri)
