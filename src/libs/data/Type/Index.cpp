@@ -4,7 +4,7 @@
 #include <QStringList>
 
 //Index::Index(const int x) : mInt(x) {;}
-
+#if 0
 TestListIndex::TestListIndex(void)
 {
     TestListCtors();
@@ -17,7 +17,6 @@ void TestListIndex::TestListCtors(void)
     QCOMPARE(xNull.isValid(), false);
 }
 
-#if 0
 bool Index::isValid(void) const
 {
     return (mInt >= 0) && (mInt < size);

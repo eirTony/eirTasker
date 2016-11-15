@@ -16,3 +16,9 @@ bool Flags::isNull(const Index x) const
             : true;
 }
 #endif
+
+void Flags::set(const Index x, const bool is)
+{
+    mIsBits.setBit(x, is),
+    mValidBits.setBit(x, true);
+}

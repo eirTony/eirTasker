@@ -16,10 +16,11 @@ public:
 
 public:
     Entity(void);
+    Entity(const Entity & other);
 
-    Boolean encode(const EntityEncoding & encoding,
+    Boolean decode(const EntityEncoding & encoding,
                    const EncodedEntity & encoded);
-    EncodedEntity decode(const EntityEncoding & encoding);
+    EncodedEntity encode(const EntityEncoding & encoding);
 };
 
 #endif // ENTITY_H

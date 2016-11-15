@@ -13,11 +13,16 @@ class TASKSHARED_EXPORT AbstractTask
 public:
     AbstractTask(void);
 
+protected:
+
+
 private:
     EntityKey::List mContextKeys;
     EntityKey mConfigKey;
     EntityKey mInputKey;
     EntityKey mResultKey;
+    TaskKeyList mParentTaskKeys;
+    float mCoefficent;
 };
 
 #endif // ABSTRACTTASK_H

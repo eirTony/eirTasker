@@ -2,8 +2,11 @@
 #define INDEX_H
 #include "Type.h"
 
-#include <QList>
 
+#if 1
+typedef int Index;
+#else
+#include <QList>
 #include "TIndex.h"
 
 DECLARE_INDEX(QList)
@@ -16,5 +19,6 @@ public:
 private:
     void TestListCtors(void);
 };
+#endif
 
 #endif // INDEX_H
