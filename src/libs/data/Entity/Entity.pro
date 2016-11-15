@@ -18,7 +18,7 @@ include(../data.pri)
 SOURCES += Entity.cpp \
     EntityLib.cpp \
     EntityEncoding.cpp \
-    CodedEntity.cpp \
+    EncodedEntity.cpp \
     EntityType.cpp \
     EntityKey.cpp
 
@@ -26,7 +26,7 @@ HEADERS += Entity.h\
         entity_global.h \
     EntityLib.h \
     EntityEncoding.h \
-    CodedEntity.h \
+    EncodedEntity.h \
     EntityType.h \
     EntityKey.h
 
