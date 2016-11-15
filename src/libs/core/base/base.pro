@@ -12,11 +12,13 @@ TEMPLATE = lib
 DEFINES += BASE_LIBRARY
 
 SOURCES += BaseLib.cpp \
-    BinaryBase.cpp
+    BinaryBase.cpp \
+    ErrorHandler.cpp
 
 HEADERS += BaseLib.h\
         base_global.h \
-    BinaryBase.h
+    BinaryBase.h \
+    ErrorHandler.h
 
 unix {
     target.path = /usr/lib
