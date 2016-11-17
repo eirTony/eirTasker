@@ -4,6 +4,11 @@ QT += core
 QMAKE_CXXFLAGS *= -std=c++11
 
 INCLUDEPATH *= /usr/include/boost
+LIBS *= -L/usr/lib/i386-linux-gnu
+#LIBS *= -lboost_system
+LIBS *= -lboost_log
+QMAKE_CXXFLAGS *= -DBOOST_LOG_DYN_LINK
+
 
 TARGET = TaskConsole
 CONFIG += console
@@ -26,5 +31,3 @@ HEADERS += \
     TaskMethodKey.h \
     StdIO.h \
     VectorMathInputEntitiy.h
-
-LIBS *= -L/usr/lib/i386-linux-gnu -lboost_system -lboost_log
