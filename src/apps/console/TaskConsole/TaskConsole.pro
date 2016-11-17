@@ -3,18 +3,13 @@ QT += core
 
 QMAKE_CXXFLAGS *= -std=c++11
 
-INCLUDEPATH *= /usr/include/boost
-LIBS *= -L/usr/lib/i386-linux-gnu
-#LIBS *= -lboost_system
-LIBS *= -lboost_log
-QMAKE_CXXFLAGS *= -DBOOST_LOG_DYN_LINK
-
-
 TARGET = TaskConsole
 CONFIG += console
 CONFIG -= app_bundle
 
 TEMPLATE = app
+
+LIBS *= -lboost
 
 SOURCES += main.cpp \
     TaskConsole.cpp \

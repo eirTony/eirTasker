@@ -13,7 +13,7 @@ TEMPLATE = lib
 
 DEFINES += ENTITY_LIBRARY
 
-include(../data.pri)
+#include(../data.pri)
 
 SOURCES += Entity.cpp \
     EntityLib.cpp \

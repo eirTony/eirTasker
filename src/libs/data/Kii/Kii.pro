@@ -13,7 +13,7 @@ TEMPLATE = lib
 
 DEFINES += KII_LIBRARY
 
-include(../data.pri)
+#include(../data.pri)
 
 SOURCES += KiiLib.cpp \
     BitKey.cpp

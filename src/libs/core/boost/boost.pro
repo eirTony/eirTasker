@@ -11,6 +11,13 @@ TEMPLATE = lib
 
 DEFINES += BOOST_LIBRARY
 
+QMAKE_CXXFLAGS *= -DBOOST_LOG_DYN_LINK
+INCLUDEPATH *= /usr/include/boost
+LIBS *= -L/usr/lib/i386-linux-gnu
+
+LIBS *= -lboost_log
+
+
 SOURCES += BoostLib.cpp \
     ./log/LogSource.cpp \
     ./log/LogBase.cpp \

@@ -5,13 +5,9 @@
 #include <QDateTime>
 #include <QTimer>
 
-#include <log/core.hpp>
-
 #include "../../../libs/core/boost/BoostLib.h"
 
 #include "StdIO.h"
-
-BL::core_ptr TaskConsole::smpGlobalLog = BL::core::get();
 
 TaskConsole::TaskConsole(QObject * parent)
     : QThread(parent)
@@ -27,10 +23,7 @@ void TaskConsole::init(void)
 {
     StdIO::info("TaskConsole initialized at %1",
                 QDateTime::currentDateTime().toString());
-    StdIO::info("globalBoost::log::core enabled=%1",
-                globalLog()
-                ? globalLog()->get_logging_enabled()
-                : false);
+    StdIO::info("globalBoost::log::core enabled=%1", mLogger.isEnabled());
 #if 0
     StdIO::info("localBoost::log::core enabled=%1",
                  cmpLocalLog->get()

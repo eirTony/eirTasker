@@ -4,7 +4,6 @@
 
 class BOOSTSHARED_EXPORT BoostLib
 {
-
 public:
     BoostLib(void);
 };
