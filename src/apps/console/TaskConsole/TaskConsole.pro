@@ -9,6 +9,8 @@ CONFIG -= app_bundle
 
 TEMPLATE = app
 
+include (../../../build/src/src.pro)
+
 LIBS *= -lboost
 
 SOURCES += main.cpp \

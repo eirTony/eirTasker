@@ -1,6 +1,5 @@
 #include "LogLib.h"
 
-
-LogLib::LogLib()
+LogLib::LogLib(void)
 {
 }

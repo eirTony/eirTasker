@@ -1,9 +1,9 @@
 eirTasker NextSteps Notes: /src/Notes/NextSteps/develop.txt
 
 *D20161115aho @D20161116
-        x LINK BROKEN linking to Boost.Log libraries
+    x LINK BROKEN linking to Boost.Log libraries
 	= COMPILE WORKAROUND INCLUDEPATH *= not working yet
-	+ .PRO|PRI config *= c++11 (maybe c++14)
+	? .PRO|PRI config *= c++11 (maybe c++14)
 	? .PRI code in SUBDIRS .PRO files??
 	? Precompiled headers in .PRO|PRI files
 

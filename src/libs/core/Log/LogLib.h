@@ -7,7 +7,7 @@ class LOGSHARED_EXPORT LogLib
 {
 
 public:
-    LogLib();
+    LogLib(void);
 };
 
 #endif // LOGLIB_H
