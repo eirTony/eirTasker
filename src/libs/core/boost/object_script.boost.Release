@@ -1,0 +1,13 @@
+INPUT(
+./release\BoostLib.o
+./release\LogSource.o
+./release\LogBase.o
+./release\Logger.o
+./release\LogSink.o
+./release\LogRecord.o
+./release\LogAttribute.o
+./release\LogFormatter.o
+./release\LogFilter.o
+./release\moc_Logger.o
+./release\moc_LogSink.o
+);

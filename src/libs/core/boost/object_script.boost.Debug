@@ -1,0 +1,13 @@
+INPUT(
+./debug\BoostLib.o
+./debug\LogSource.o
+./debug\LogBase.o
+./debug\Logger.o
+./debug\LogSink.o
+./debug\LogRecord.o
+./debug\LogAttribute.o
+./debug\LogFormatter.o
+./debug\LogFilter.o
+./debug\moc_Logger.o
+./debug\moc_LogSink.o
+);
