@@ -1,6 +1,6 @@
 #include "LogFilter.h"
 
-LogFilter::LogFilter()
+LogFilter::LogFilter(const LogRecord logrec)
 {
 
 }

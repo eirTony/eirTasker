@@ -1,13 +1,12 @@
 #ifndef TYPE_H
 #define TYPE_H
+#include "TypeLib.h"
 
-#include "type_global.h"
-
-class TYPESHARED_EXPORT Type
+template <class PIXEL> class PESHARED_EXPORT Type
 {
-
 public:
-    Type();
+    Type(void);
+    PIXEL mPixel;
 };
 
 #endif // TYPE_H

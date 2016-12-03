@@ -1,0 +1,12 @@
+#ifndef VJABHAAR_GLOBAL_H
+#define VJABHAAR_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(VJABHAAR_LIBRARY)
+#  define VJABHAARSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define VJABHAARSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // VJABHAAR_GLOBAL_H

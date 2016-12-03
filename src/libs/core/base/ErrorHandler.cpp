@@ -13,3 +13,16 @@ ErrorHandler::ErrorHandler(const QString className,
     setObjectName(QString("ErrorHandler:%1").arg(className));
 }
 
+void ErrorHandler::handle(const int error,
+            const QString & string,
+            const QVariant & data)
+{
+    mError = error;
+    mErrorString = string;
+    mErrorData = data;
+}
+
+void ErrorHandler::handle(const QString & string)
+{
+    handle(-1, string);
+}

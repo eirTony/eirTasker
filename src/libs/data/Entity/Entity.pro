@@ -20,7 +20,7 @@ SOURCES += Entity.cpp \
     EntityEncoding.cpp \
     EncodedEntity.cpp \
     EntityType.cpp \
-    EntityKey.cpp
+    EntityKey.cpp \
 
 HEADERS += Entity.h\
         entity_global.h \
@@ -28,7 +28,8 @@ HEADERS += Entity.h\
     EntityEncoding.h \
     EncodedEntity.h \
     EntityType.h \
-    EntityKey.h
+    EntityKey.h \
+    EntityProperty.h \
 
 unix {
     target.path = /usr/lib

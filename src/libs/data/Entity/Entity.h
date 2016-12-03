@@ -6,7 +6,8 @@
 #include <QSettings>
 
 #include "EncodedEntity.h"
-//#include "EntityEncoding.h"
+#include "EntityKey.h"
+#include "EntityType.h"
 class EntityEncoding;
 
 class ENTITYSHARED_EXPORT Entity : public QSettings
@@ -17,10 +18,16 @@ public:
 public:
     Entity(void);
     Entity(const Entity & other);
+    void set(const EntityType & etype);
+    void setKey(const EntityKey & key);
 
     Boolean decode(const EntityEncoding & encoding,
                    const EncodedEntity & encoded);
     EncodedEntity encode(const EntityEncoding & encoding);
+
+private:
+    EntityType mType;
+    EntityKey mKey;
 };
 
 #endif // ENTITY_H

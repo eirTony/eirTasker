@@ -24,5 +24,10 @@ TaskInterface::TaskInterface(const TaskKey taskKey,
 
 void TaskInterface::setValid(void)
 {
-    mFlags.set(FlagIndex::Valid);
+    //mFlags.set(FlagIndex::Valid);
+}
+
+const ErrorHandler & TaskInterface::error(void) const
+{
+    return *mpError;
 }

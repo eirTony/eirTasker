@@ -34,6 +34,7 @@ public:
                   const Entity config=Entity(),
                   const Entity::List contextList=Entity::List());
     ~TaskInterface();
+    const ErrorHandler & error(void) const;
 
 protected:
     virtual void run(void) = 0;

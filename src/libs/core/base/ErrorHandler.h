@@ -12,6 +12,7 @@ public:
     explicit ErrorHandler(QObject * parent=0);
     ErrorHandler(const QString className,
                  QObject * parent=0);
+    bool isError(void) const;
     ~ErrorHandler();
 
 protected slots:
@@ -25,6 +26,7 @@ protected slots:
     void handle(const int error,
                 const QString & string=QString(),
                 const QVariant & data=QVariant());
+    void handle(const QString & string);
     void handle(void);
 
     void setError(const int error);

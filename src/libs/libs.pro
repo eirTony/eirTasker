@@ -5,4 +5,5 @@ include (../build/src.pri)
 SUBDIRS += \
     core \
     data \
-    proc
+    proc \
+    image

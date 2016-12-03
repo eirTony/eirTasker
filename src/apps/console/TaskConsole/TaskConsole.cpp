@@ -21,7 +21,7 @@ void TaskConsole::init(void)
 {
     LogSink * ls = new LogSink("LogFile", this);
     ls->set(QFileInfo("TaskConsole.log"));
-    mLogger.set(ls);
+    mLogger.addSink(ls);
 
     StdIO::info("TaskConsole initialized at %1",
                 QDateTime::currentDateTime().toString());

@@ -18,6 +18,6 @@ TEMPLATE = app
 SOURCES += TestDataLibs.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
-INCLUDEPATH *= ../../../libs/thing
-LIBS *= -lType
-LIBS *= -L/tmp/libs/data/Type
+INCLUDEPATH *= ../../../libs/data
+LIBS *= -lType -L../../../libs/data/type
+#LIBS *= -L$$DESTDIR

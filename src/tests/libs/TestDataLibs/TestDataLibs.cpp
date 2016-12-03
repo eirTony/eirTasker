@@ -40,13 +40,11 @@ void TestDataLibs::testCase1()
     QVERIFY2(true, "Failure");
 }
 
-//#include <thing/Type.h>
-//#include "../../libs/thing/Type/Index.h"
 #include "../../../libs/data/Type/Index.h"
 
 void TestDataLibs::testIndex(void)
 {
-    TestListIndex tIndex;
+    //TestListIndex tIndex;
 }
 
 QTEST_APPLESS_MAIN(TestDataLibs)
