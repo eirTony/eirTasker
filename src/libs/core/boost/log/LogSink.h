@@ -8,6 +8,8 @@ class QFileInfo;
 class QIODevice;
 class QTextStream;
 
+namespace EIRC2 { namespace BoostLib { namespace Logger {
+
 class LogFilter;
 
 class LogSink : public QObject
@@ -25,5 +27,6 @@ private:
     QIODevice * mpIOD = 0;
     QTextStream * mpStream = 0;
 };
+} } } // Logger, BoostLib, EIRC2
 
 #endif // LOGSINK_H

@@ -3,18 +3,9 @@
 
 #include <QObject>
 
-#ifdef BOOST_LOG_CORE
 #include <boost/log/core/core.hpp>
 
-namespace EIRC2
-{
-    namespace BoostLib
-        {
-        namespace Logger
-        {
-        }
-    }
-}
+namespace EIRC2 { namespace BoostLib { namespace Logger { } } }
 
 namespace BL = boost::log;
 namespace E2 = EIRC2;
@@ -45,5 +36,4 @@ private:
 };
 } } } // Logger, BoostLib, EIRC2
 
-#endif // BOOST_LOGGER
 #endif // LOGGER_H

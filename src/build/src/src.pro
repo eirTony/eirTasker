@@ -5,9 +5,6 @@ INCLUDEPATH *= ../../data
 INCLUDEPATH *= ../../proc
 
 QMAKE_CXXFLAGS *= -std=c++11
-QMAKE_CXXFLAGS *= -std=gcc++11
-# CONFIG *= c++11
-#CONFIG *= gnu++11
 
 EXEDIR = ../../../../exe
 

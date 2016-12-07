@@ -16,7 +16,7 @@ SOURCES += VJABHaar.cpp \
     HaarRect.cpp \
     HaarTree.cpp \
     HaarFeature.cpp \
-    ../HaarCascade.cpp
+    HaarCascade.cpp
 
 HEADERS += VJABHaar.h\
         vjabhaar_global.h \
@@ -24,7 +24,7 @@ HEADERS += VJABHaar.h\
     HaarRect.h \
     HaarTree.h \
     HaarFeature.h \
-    ../HaarCascade.h
+    HaarCascade.h
 
 unix {
     target.path = /usr/lib
