@@ -11,6 +11,8 @@ TEMPLATE = lib
 
 DEFINES += PIXEL_LIBRARY
 
+include (../imageCommon.pri)
+
 SOURCES += Pixel.cpp
 
 HEADERS += Pixel.h\

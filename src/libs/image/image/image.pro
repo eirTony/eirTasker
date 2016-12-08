@@ -11,6 +11,8 @@ TEMPLATE = lib
 
 DEFINES += IMAGE_LIBRARY
 
+include (../imageCommon.pri)
+
 SOURCES += Image.cpp \
     ImageLib.cpp \
     Region.cpp

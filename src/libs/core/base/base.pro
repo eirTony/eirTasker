@@ -11,6 +11,8 @@ TEMPLATE = lib
 
 DEFINES += BASE_LIBRARY
 
+include (../coreCommon.pri)
+
 SOURCES += BaseLib.cpp \
     BinaryBase.cpp \
     ErrorHandler.cpp

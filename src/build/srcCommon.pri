@@ -18,5 +18,5 @@ else {
         DESTDIR = $$EXEDIR/bin32W
         LIBS += -L$$EXEDIR/bin32W
 }
-message ($$PWD)
-message ($$DESTDIR)
+#message ($$PWD)
+#message ($$DESTDIR)
