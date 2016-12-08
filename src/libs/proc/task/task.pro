@@ -13,7 +13,7 @@ TEMPLATE = lib
 
 DEFINES += TASK_LIBRARY
 
-#include(../procCommon.pri)
+include (../procCommon.pri)
 
 SOURCES += TaskLib.cpp \
     AbstractTask.cpp \
