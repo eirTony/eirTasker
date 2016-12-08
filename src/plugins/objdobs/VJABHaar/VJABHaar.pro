@@ -11,6 +11,8 @@ TEMPLATE = lib
 
 DEFINES += VJABHAAR_LIBRARY
 
+include (../objdobsCommon.pri)
+
 SOURCES += VJABHaar.cpp \
     HaarLib.cpp \
     HaarRect.cpp \
