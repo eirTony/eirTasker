@@ -1,21 +1,16 @@
-# ./src/build/src.pri
-message("./src/build/src.pri")
-
-#DESTDIR =   ../../../bin
-#LIBS *=     $$DESTDIR
-
-INCLUDEPATH *= ../../core
-INCLUDEPATH *= ../../data
-INCLUDEPATH *= ../../proc
+# ./src/build/srcCommon.pri
 
 QMAKE_CXXFLAGS *= -std=c++11
-#CONFIG *= c++11
+QMAKE_CXXFLAGS_DEBUG *= -Og
 
+# relative to ./src/apps|libs/console|core/TaskConsole|boost
+INCLUDEPATH *= ../../../../libs/core
+INCLUDEPATH *= ../../../../libs/data
+INCLUDEPATH *= ../../../../libs/proc
 EXEDIR = ../../../../exe
 
 CONFIG += debug_and_release
 CONFIG(debug, debug|release) {
-        QMAKE_CXXFLAGS_DEBUG *= -Og
         DESTDIR = $$EXEDIR/dbg32W
         LIBS += -L$$EXEDIR/dbg32W
 }
@@ -23,5 +18,5 @@ else {
         DESTDIR = $$EXEDIR/bin32W
         LIBS += -L$$EXEDIR/bin32W
 }
+message ($$PWD)
 message ($$DESTDIR)
-message ($$LIBS)

@@ -1,5 +1,6 @@
 #ifndef LOGGER_H
 #define LOGGER_H
+#include "../BoostLib.h"
 
 #include <QObject>
 
@@ -16,7 +17,7 @@ namespace EIRC2 { namespace BoostLib { namespace Logger {
 
 class LogSink;
 
-class Logger : public QObject
+class BOOSTSHARED_EXPORT Logger : public QObject
 {
     Q_OBJECT
 public:
