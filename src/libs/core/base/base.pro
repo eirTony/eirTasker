@@ -15,12 +15,21 @@ include (../coreCommon.pri)
 
 SOURCES += BaseLib.cpp \
     BinaryBase.cpp \
-    ErrorHandler.cpp
+    ErrorHandler.cpp \
+    Severity.cpp \
+    BasicName.cpp \
+    BasicId.cpp \
+    Enumeration.cpp
 
 HEADERS += BaseLib.h\
         base_global.h \
     BinaryBase.h \
-    ErrorHandler.h
+    ErrorHandler.h \
+    Severity.h \
+    BasicName.h \
+    BasicId.h \
+    Enumeration.h \
+    Named.h
 
 unix {
     target.path = /usr/lib
