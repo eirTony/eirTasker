@@ -33,7 +33,7 @@ public: // static
     static void addSink(LogSink * sink);
 
 private:
-    const static BL::core_ptr csmpCore;
+    const static CorePtr csmpCore;
 };
 } } } // Logger, BoostLib, EIRC2
 

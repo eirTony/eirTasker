@@ -1,6 +1,6 @@
 #include "Logger.h"
 
-const BL::core_ptr csmpCore = BL::core::get();
+const E2BLog::Logger::CorePtr E2BLog::Logger::csmpCore = BL::core::get();
 
 E2BLog::Logger::Logger(QObject * parent)
     : QObject(parent)

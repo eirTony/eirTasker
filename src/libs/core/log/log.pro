@@ -6,19 +6,25 @@
 
 QT       -= gui
 
-TARGET = Log
+TARGET = log
 TEMPLATE = lib
 
 DEFINES += LOG_LIBRARY
 
 include (../coreCommon.pri)
 
+LIBS *= -lboost
+
 SOURCES += LogLib.cpp \
-    LogItem.cpp
+    LogItem.cpp \
+    Log.cpp \
+    LogObject.cpp
 
 HEADERS += LogLib.h\
         log_global.h \
-    LogItem.h
+    LogItem.h \
+    Log.h \
+    LogObject.h
 
 unix {
     target.path = /usr/lib
