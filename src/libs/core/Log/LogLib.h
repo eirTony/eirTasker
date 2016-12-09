@@ -5,7 +5,6 @@
 
 class LOGSHARED_EXPORT LogLib
 {
-
 public:
     LogLib(void);
 };

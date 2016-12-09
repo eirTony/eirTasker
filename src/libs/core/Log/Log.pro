@@ -13,10 +13,12 @@ DEFINES += LOG_LIBRARY
 
 include (../coreCommon.pri)
 
-SOURCES += LogLib.cpp
+SOURCES += LogLib.cpp \
+    LogItem.cpp
 
 HEADERS += LogLib.h\
-        log_global.h
+        log_global.h \
+    LogItem.h
 
 unix {
     target.path = /usr/lib
