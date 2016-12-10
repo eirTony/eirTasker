@@ -1,11 +1,14 @@
 #ifndef ERRORHANDLER_H
 #define ERRORHANDLER_H
+#include "BaseLib.h"
 
 #include <QObject>
 #include <QString>
 #include <QVariant>
 
-class ErrorHandler : public QObject
+typedef quint64 EightCC;
+
+class BASESHARED_EXPORT ErrorHandler : public QObject
 {
     Q_OBJECT
 public:
@@ -13,49 +16,52 @@ public:
     ErrorHandler(const QString className,
                  QObject * parent=0);
     bool isError(void) const;
+    void clearError(void);
     ~ErrorHandler();
 
 protected slots:
-    void handle(const int error,
-                const quint64 code,
-                const QString & string=QString(),
-                const QVariant & data=QVariant());
-    void handle(const quint64 code,
-                const QString & string=QString(),
-                const QVariant & data=QVariant());
-    void handle(const int error,
-                const QString & string=QString(),
-                const QVariant & data=QVariant());
-    void handle(const QString & string);
-    void handle(void);
+    bool handle(void);
 
+protected:
     void setError(const int error);
-    void setCode(const quint64 code);
+    void setCode(const EightCC code);
     void setString(const QString & string);
     void setData(const QVariant & data);
+    bool handle(const int error,
+                const EightCC code,
+                const QString & string=QString(),
+                const QVariant & data=QVariant());
+    bool handle(const EightCC code,
+                const QString & string=QString(),
+                const QVariant & data=QVariant());
+    bool handle(const int error,
+                const QString & string=QString(),
+                const QVariant & data=QVariant());
+    bool handle(const QString & string);
 
-    void registerError(const int error,
-                       const quint64 code,
-                       const QString & string);
-    void registerError(const quint64 code,
-                       const QString & string);
-    void registerError(const int error,
-                       const QString & string);
+protected: // static
+    static void registerError(const int error,
+                              const EightCC code,
+                              const QString & string);
+    static void registerError(const EightCC code,
+                              const QString & string);
+    static void registerError(const int error,
+                              const QString & string);
 
 signals:
-    void error(int error, quint64 code, QString, QVariant data);
+    void error(int error, EightCC code, QString, QVariant data);
 
 public slots:
 
 private:
     int         mError          = 0;
-    quint64     mErrorCode      = 0; //  EightCC
+    EightCC     mErrorCode      = 0;
     QString     mErrorString;
     QVariant    mErrorData;
 
 private: // static
-    QMap<int, QString>      mErrorStringMap;
-    QMap<quint64, QString>  mErrorCodeMap; // EightCC
+    static QMap<int, QString>      mErrorStringMap;
+    static QMap<EightCC, QString>  mCodeStringMap;
 };
 
 #endif // ERRORHANDLER_H

@@ -30,7 +30,8 @@ HEADERS += BaseLib.h\
     BasicId.h \
     Enumeration.h \
     Named.h \
-    DataProperty.h
+    DataProperty.h \
+    Singleton.h
 
 unix {
     target.path = /usr/lib
