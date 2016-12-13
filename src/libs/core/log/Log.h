@@ -8,9 +8,10 @@ class LOGSHARED_EXPORT Log
 {
 public:
     Log(void);
-
+#if 0
 private:
     E2BLog::Logger::CorePtr mpCore =  0;
+#endif
 };
 
 #endif // LOG_H

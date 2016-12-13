@@ -18,13 +18,15 @@ LIBS *= -lboost
 SOURCES += LogLib.cpp \
     LogItem.cpp \
     Log.cpp \
-    LogObject.cpp
+    LogObject.cpp \
+    LogMain.cpp
 
 HEADERS += LogLib.h\
         log_global.h \
     LogItem.h \
     Log.h \
-    LogObject.h
+    LogObject.h \
+    LogMain.h
 
 unix {
     target.path = /usr/lib
