@@ -37,3 +37,9 @@ Makefile*
 # QtCtreator CMake
 CMakeLists.txt.user
 
+# xed
+*.pro~
+*.pri~
+*.cpp~
+*.h~
+
