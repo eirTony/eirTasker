@@ -13,7 +13,7 @@ TEMPLATE = lib
 
 DEFINES += TYPE_LIBRARY
 
-#include(../data.pri)
+#include(../dataCommon.pri)
 
 SOURCES += Type.cpp \
     Flags.cpp \

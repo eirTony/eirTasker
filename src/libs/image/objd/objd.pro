@@ -13,6 +13,8 @@ TEMPLATE = lib
 
 DEFINES += OBJD_LIBRARY
 
+include (../imageCommon.pri)
+
 SOURCES += Objd.cpp \
     ObjdInterface.cpp \
     ObjdInputEntity.cpp

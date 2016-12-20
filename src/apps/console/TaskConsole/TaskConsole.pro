@@ -9,7 +9,7 @@ CONFIG -= app_bundle
 
 TEMPLATE = app
 
-include (../../../build/src/src.pro)
+include (../consoleCommon.pri)
 
 LIBS *= -lboost
 

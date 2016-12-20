@@ -1,19 +1,12 @@
 #ifndef LOGGER_H
 #define LOGGER_H
+#include "../BoostLib.h"
 
 #include <QObject>
 
 #include <boost/log/core/core.hpp>
 
-namespace EIRC2
-{
-    namespace BoostLib
-        {
-        namespace Logger
-        {
-        }
-    }
-}
+namespace EIRC2 { namespace BoostLib { namespace Logger { } } }
 
 namespace BL = boost::log;
 namespace E2 = EIRC2;
@@ -24,7 +17,7 @@ namespace EIRC2 { namespace BoostLib { namespace Logger {
 
 class LogSink;
 
-class Logger : public QObject
+class BOOSTSHARED_EXPORT Logger : public QObject
 {
     Q_OBJECT
 public:
@@ -40,7 +33,7 @@ public: // static
     static void addSink(LogSink * sink);
 
 private:
-    const static BL::core_ptr csmpCore;
+    const static CorePtr csmpCore;
 };
 
 } } } // Logger, BoostLib, EIRC2

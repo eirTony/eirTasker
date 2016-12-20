@@ -11,6 +11,8 @@ TEMPLATE = lib
 
 DEFINES += FACE_LIBRARY
 
+include (../imageCommon.pri)
+
 SOURCES += Face.cpp \
     ObjdLib.cpp
 

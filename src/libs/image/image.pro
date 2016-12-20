@@ -5,5 +5,4 @@ SUBDIRS += \
     frame \
     objd \
     image \
-    face \
-    color
+    face

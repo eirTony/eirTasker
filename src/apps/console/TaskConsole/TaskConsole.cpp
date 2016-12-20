@@ -3,7 +3,11 @@
 #include <QtDebug>
 
 #include <QDateTime>
+#include <QFileInfo>
 #include <QTimer>
+
+#include <../../../libs/core/boost/log/Logger.h>
+#include <../../../libs/core/boost/log/LogSink.h>
 
 #include "StdIO.h"
 
@@ -19,9 +23,11 @@ TaskConsole::TaskConsole(QObject * parent)
 
 void TaskConsole::init(void)
 {
-    LogSink * ls = new LogSink("LogFile", this);
+#if 0
+    E2BLog::LogSink * ls = new LogSink("LogFile", this);
     ls->set(QFileInfo("TaskConsole.log"));
     mLogger.addSink(ls);
+#endif
 
     StdIO::info("TaskConsole initialized at %1",
                 QDateTime::currentDateTime().toString());

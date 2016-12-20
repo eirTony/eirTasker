@@ -11,6 +11,8 @@ TEMPLATE = lib
 
 DEFINES += FRAME_LIBRARY
 
+include (../imageCommon.pri)
+
 SOURCES += Frame.cpp \
     GreyFrame.cpp \
     FrameLib.cpp
