@@ -21,10 +21,10 @@ class BOOSTSHARED_EXPORT Logger : public QObject
 {
     Q_OBJECT
 public:
-    typedef BL::core_ptr CorePtr;
+    Logger(QObject * parent=0);
 
 public:
-    Logger(QObject * parent=0);
+    typedef BL::core_ptr CorePtr;
 
 public: // static
     static CorePtr pCore(void);
@@ -35,6 +35,7 @@ public: // static
 private:
     const static CorePtr csmpCore;
 };
+
 } } } // Logger, BoostLib, EIRC2
 
 #endif // LOGGER_H

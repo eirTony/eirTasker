@@ -16,6 +16,8 @@ include (../coreCommon.pri)
 SOURCES += BaseLib.cpp \
     BinaryBase.cpp \
     ErrorHandler.cpp \
+    BasicErrorInfo.cpp \
+    BasicErrorObject.cpp
     Severity.cpp \
     BasicName.cpp \
     BasicId.cpp \
@@ -25,6 +27,8 @@ HEADERS += BaseLib.h\
         base_global.h \
     BinaryBase.h \
     ErrorHandler.h \
+    BasicErrorInfo.h \
+    BasicErrorObject.h
     Severity.h \
     BasicName.h \
     BasicId.h \
