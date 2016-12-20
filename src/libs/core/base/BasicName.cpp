@@ -40,12 +40,24 @@ BasicName::operator QString (void) const
     return toString();
 }
 
-bool BasicName::operator < (const BasicName & other)
+bool BasicName::is(const QString & s) const
+{
+    return toLower() == s.toLower();
+}
+
+bool BasicName::operator < (const BasicName & other) const
 {
     return toLower() < other.toLower();
+}
+
+#if 0
+bool BasicName::operator == (const BasicName & other)
+{
+    return is(other);
 }
 
 bool operator < (const BasicName & lhs, const BasicName & rhs)
 {
     return lhs.toLower() < rhs.toLower();
 }
+#endif

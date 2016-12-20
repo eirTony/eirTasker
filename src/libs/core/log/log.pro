@@ -13,8 +13,6 @@ DEFINES += LOG_LIBRARY
 
 include (../coreCommon.pri)
 
-SOURCES += LogLib.cpp
-
 LIBS *= -lboost
 
 SOURCES += LogLib.cpp \

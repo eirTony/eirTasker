@@ -15,24 +15,25 @@ include (../coreCommon.pri)
 
 SOURCES += BaseLib.cpp \
     BinaryBase.cpp \
-    ErrorHandler.cpp \
     BasicErrorInfo.cpp \
-    BasicErrorObject.cpp
-    Severity.cpp \
-    BasicName.cpp \
+    BasicErrorObject.cpp \
     BasicId.cpp \
-    Enumeration.cpp
+    BasicName.cpp \
+    Enumeration.cpp \
+    Severity.cpp \
 
 HEADERS += BaseLib.h\
         base_global.h \
     BinaryBase.h \
-    ErrorHandler.h \
     BasicErrorInfo.h \
-    BasicErrorObject.h
+    BasicErrorObject.h \
+    DataProperty.h \
+    Enumeration.h \
+    Named.h \
     Severity.h \
+    Singleton.h \
     BasicName.h \
     BasicId.h \
-    Enumeration.h \
     Named.h \
     DataProperty.h
 

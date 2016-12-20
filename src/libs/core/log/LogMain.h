@@ -1,7 +1,6 @@
 #ifndef LOGMAIN_H
 #define LOGMAIN_H
 
-
 #include <QUrl>
 
 class LogMain

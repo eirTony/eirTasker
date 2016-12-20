@@ -4,9 +4,9 @@
 class QFileInfo;
 class QDomElement;
 
-#include <../../../libs/core/base/ErrorHandler.h>
+#include <../../../libs/core/base/BasicErrorInfo.h>
 
-class HaarCascade : public ErrorHandler
+class HaarCascade : public BasicErrorInfo
 {
 public:
     HaarCascade(void);

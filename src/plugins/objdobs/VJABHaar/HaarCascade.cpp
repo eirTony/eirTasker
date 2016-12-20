@@ -14,13 +14,13 @@ bool HaarCascade::set(const QFileInfo & xmlFi)
     QFile xf(xmlFi.absoluteFilePath());
     QDomDocument dd("HaarCascade:"+xmlFi.completeBaseName());
     if ( ! xf.open(QIODevice::ReadOnly))
-        handle((int)(xf.error()), xf.errorString());
+        setError((ErrorCode)(xf.error()), xf.errorString());
     if ( ! isError())
     {
         QString errorString;
         int errorLine, errorColumn;
         if ( ! dd.setContent(&xf, false, &errorString, &errorLine, &errorColumn))
-            handle(QString("HaarCascade read XML failure: %1 at %2,%3")
+            setError(QString("HaarCascade read XML failure: %1 at %2,%3")
                     .arg(errorString).arg(errorLine).arg(errorColumn));
         else
             set(dd.documentElement());
@@ -30,7 +30,8 @@ bool HaarCascade::set(const QFileInfo & xmlFi)
 
 bool HaarCascade::set(const QDomElement & de)
 {
-    // TODO: Process cascade
+    (void)de; // TODO: Process cascade
+
     return false;
 }
 

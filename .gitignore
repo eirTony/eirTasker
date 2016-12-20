@@ -29,6 +29,8 @@ Makefile*
 # QtCreator
 
 *.autosave
+object_script.*.Debug
+object_script.*.Release
 
 # QtCtreator Qml
 *.qmlproject.user

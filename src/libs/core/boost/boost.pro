@@ -25,7 +25,7 @@ SOURCES += BoostLib.cpp \
     ./log/LogRecord.cpp \
     ./log/LogAttribute.cpp \
     ./log/LogFormatter.cpp \
-    LogFilter.cpp
+    ./log/LogFilter.cpp
 
 HEADERS += BoostLib.h\
         boost_global.h \
@@ -36,7 +36,7 @@ HEADERS += BoostLib.h\
     ./log/LogRecord.h \
     ./log/LogAttribute.h \
     ./log/LogFormatter.h \
-    LogFilter.h
+    ./log/LogFilter.h
 
 unix {
     target.path = /usr/lib

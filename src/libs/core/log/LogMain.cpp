@@ -1,5 +1,7 @@
 #include "LogMain.h"
 
+#include "../base/BasicName.h"
+
 LogMain::LogMain(void) {;}
 
 bool LogMain::add(const QUrl & url)
@@ -14,6 +16,7 @@ bool LogMain::add(const QUrl & url)
 
 bool LogMain::addTroll(const QUrl & url)
 {
-    
+    (void)url;
+    return false;
 }
 

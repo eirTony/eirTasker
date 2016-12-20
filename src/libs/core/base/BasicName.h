@@ -19,11 +19,16 @@ public:
     void clear(void);
     QString toString(void) const;
     QString toLower(void) const;
+    bool is(const QString & s) const;
     operator QString (void) const;
-    bool operator < (const BasicName & other);
+    bool operator <  (const BasicName & other) const;
+#if 0
+    bool operator == (const BasicName & other) const;
 
     friend bool operator < (const BasicName & lhs,
                             const BasicName & rhs);
+#endif
+
 private:
     QString mName;
 

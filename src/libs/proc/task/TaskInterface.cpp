@@ -1,6 +1,5 @@
 #include "TaskInterface.h"
 
-#include "../../core/base/ErrorHandler.h"
 
 TaskInterface::TaskInterface(void)
 {
@@ -14,7 +13,6 @@ TaskInterface::TaskInterface(const TaskKey taskKey,
                              const Entity::List contextList)
     : mTaskKey(taskKey)
     , mpTaskObject(taskObject)
-    , mpError(new ErrorHandler)
     , mContextList(contextList)
     , mConfigEntity(config)
     , mInputEntity(input)
@@ -27,7 +25,3 @@ void TaskInterface::setValid(void)
     //mFlags.set(FlagIndex::Valid);
 }
 
-const ErrorHandler & TaskInterface::error(void) const
-{
-    return *mpError;
-}

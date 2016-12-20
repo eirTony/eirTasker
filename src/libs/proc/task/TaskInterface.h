@@ -2,13 +2,13 @@
 #define TASKINTERFACE_H
 #include "TaskLib.h"
 
+#include "../../core/base/BasicErrorInfo.h"
 #include "../../data/Entity/Entity.h"
 #include "../../data/Type/Flags.h"
 
-class ErrorHandler;
 class TaskObject;
 
-class TaskInterface
+class TaskInterface : public BasicErrorInfo
 {
 public:
     enum FlagIndex
@@ -34,7 +34,6 @@ public:
                   const Entity config=Entity(),
                   const Entity::List contextList=Entity::List());
     ~TaskInterface();
-    const ErrorHandler & error(void) const;
 
 protected:
     virtual void run(void) = 0;
@@ -44,7 +43,6 @@ protected:
 private:
     TaskKey         mTaskKey;
     TaskObject *    mpTaskObject;
-    ErrorHandler *  mpError;
     Entity::List    mContextList;
     Entity          mConfigEntity;
     Entity          mInputEntity;
