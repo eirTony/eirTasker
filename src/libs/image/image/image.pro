@@ -13,14 +13,12 @@ DEFINES += IMAGE_LIBRARY
 
 SOURCES += Image.cpp \
     ImageLib.cpp \
-    Region.cpp \
-    GreyFrame.cpp
+    Region.cpp
 
 HEADERS += Image.h\
         image_global.h \
     ImageLib.h \
-    Region.h \
-    GreyFrame.h
+    Region.h
 
 unix {
     target.path = /usr/lib

@@ -11,6 +11,8 @@ TEMPLATE = lib
 
 DEFINES += LOG_LIBRARY
 
+#include(../core.pri)
+
 SOURCES += LogLib.cpp
 
 HEADERS += LogLib.h\

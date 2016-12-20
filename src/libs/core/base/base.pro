@@ -11,14 +11,20 @@ TEMPLATE = lib
 
 DEFINES += BASE_LIBRARY
 
+#include(../core.pri)
+
 SOURCES += BaseLib.cpp \
     BinaryBase.cpp \
-    ErrorHandler.cpp
+    ErrorHandler.cpp \
+    BasicErrorInfo.cpp \
+    BasicErrorObject.cpp
 
 HEADERS += BaseLib.h\
         base_global.h \
     BinaryBase.h \
-    ErrorHandler.h
+    ErrorHandler.h \
+    BasicErrorInfo.h \
+    BasicErrorObject.h
 
 unix {
     target.path = /usr/lib

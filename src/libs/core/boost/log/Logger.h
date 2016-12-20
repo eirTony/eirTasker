@@ -3,7 +3,6 @@
 
 #include <QObject>
 
-#ifdef BOOST_LOG_CORE
 #include <boost/log/core/core.hpp>
 
 namespace EIRC2
@@ -29,10 +28,10 @@ class Logger : public QObject
 {
     Q_OBJECT
 public:
-    typedef BL::core_ptr CorePtr;
+    Logger(QObject * parent=0);
 
 public:
-    Logger(QObject * parent=0);
+    typedef BL::core_ptr CorePtr;
 
 public: // static
     static CorePtr pCore(void);
@@ -43,7 +42,7 @@ public: // static
 private:
     const static BL::core_ptr csmpCore;
 };
+
 } } } // Logger, BoostLib, EIRC2
 
-#endif // BOOST_LOGGER
 #endif // LOGGER_H

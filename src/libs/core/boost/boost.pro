@@ -11,6 +11,8 @@ TEMPLATE = lib
 
 DEFINES += BOOST_LIBRARY
 
+#include(../core.pri)
+
 QMAKE_CXXFLAGS *= -DBOOST_LOG_DYN_LINK
 INCLUDEPATH *= /usr/include/boost
 LIBS *= -L/usr/lib/i386-linux-gnu
