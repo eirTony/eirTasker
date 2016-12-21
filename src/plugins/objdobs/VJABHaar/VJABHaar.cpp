@@ -1,6 +1,6 @@
 #include "VJABHaar.h"
 
 
-VJABHaar::VJABHaar()
+VJABHaar::VJABHaar(void)
 {
 }

@@ -1,5 +1,6 @@
 #ifndef HAARCASCADE_H
 #define HAARCASCADE_H
+#include "VJABHaar.h"
 
 class QFileInfo;
 class QDomElement;
