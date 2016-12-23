@@ -13,8 +13,7 @@ public:
     void add(const HaarFeature & feature);
     HaarFeatureValue getValue(const HaarGreyFrame & grey,
                               const HaarFeatureSquares & squares,
-                              const int i,
-                              const int j,
+                              const HaarFramePoint pt,
                               const HaarFeatureScale scale);
 
 private:

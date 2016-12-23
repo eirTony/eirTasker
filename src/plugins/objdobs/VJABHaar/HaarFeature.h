@@ -4,21 +4,20 @@
 
 #include <QList>
 
-#include "HaarRect.h"
+#include "HaarWeightedRect.h"
 
 class HaarFeature
 {
 public:
     HaarFeature(void);
-    void addRect(const HaarRect rect);
+    void addRect(const HaarWeightedRect rect);
     HaarFeatureIsRight getLeftRight(const HaarGreyFrame & grey,
                                     const HaarFeatureSquares & squares,
-                                    const int i,
-                                    const int j,
+                                    const HaarFramePoint pt,
                                     const HaarFeatureScale scale);
 
 private:
-    QList<HaarRect>         mRectList;
+    QList<HaarWeightedRect>         mRectList;
     HaarFeatureThreshold    mThreshold;
     HaarFeatureValue        mLeftValue;
     HaarFeatureValue        mRightValue;

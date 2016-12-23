@@ -15,7 +15,7 @@ include (../objdobsCommon.pri)
 
 SOURCES += VJABHaar.cpp \
     HaarLib.cpp \
-    HaarRect.cpp \
+    HaarWeightedRect.cpp \
     HaarTree.cpp \
     HaarFeature.cpp \
     HaarCascade.cpp \
@@ -25,7 +25,7 @@ SOURCES += VJABHaar.cpp \
 HEADERS += VJABHaar.h\
         vjabhaar_global.h \
     HaarLib.h \
-    HaarRect.h \
+    HaarWeightedRect.h \
     HaarTree.h \
     HaarFeature.h \
     HaarCascade.h \

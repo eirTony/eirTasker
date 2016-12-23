@@ -14,8 +14,7 @@ public:
     void addTree(const HaarTree & tree);
     HaarStageBoolean pass(const HaarGreyFrame & grey,
                           const HaarFeatureSquares & squares,
-                          const int i,
-                          const int j,
+                          const HaarFramePoint pt,
                           const HaarFeatureScale scale);
 
 

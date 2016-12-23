@@ -1,4 +1,4 @@
-#include "HaarRect.h"
+#include "HaarWeightedRect.h"
 
 HaarWeightedRect::HaarWeightedRect(void)
 {

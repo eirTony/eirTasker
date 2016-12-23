@@ -2,6 +2,7 @@
 #define VJABHAAR_H
 #include "vjabhaar_global.h"
 
+#include <QPoint>
 #include <QRect>
 #include <QSize>
 
@@ -24,9 +25,21 @@ typedef HaarFeatureThreshold    HaarStageThreshold;
 typedef bool                    HaarStageBoolean;
 
 typedef QSize HaarDetectorSize;
-
+typedef bool HaarDetectorBoolean;
+typedef QList<HaarRectRect> HaarObsList;
+typedef qreal HaarSums;
+typedef Frame<HaarSums> HaarSumsFrame;
+typedef qreal HaarSquares;
+typedef Frame<HaarSquares> HaarSquaresFrame;
+typedef int HaarCannyItem;
+typedef Frame<HaarCannyItem> HaarCannyFrame;
+typedef QPoint HaarFramePoint;
 typedef quint8  HaarGreyPixel;
 typedef Frame<HaarGreyPixel> HaarGreyFrame;
+typedef QSize HaarObsSize;
+typedef QList<HaarObsSize> HaarObsSizes;
+
+
 
 class VJABHAARSHARED_EXPORT VJABHaar
 {
