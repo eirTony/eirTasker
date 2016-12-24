@@ -20,8 +20,8 @@ bool HaarCascade::set(const QFileInfo & xmlFi)
         QString errorString;
         int errorLine, errorColumn;
         if ( ! dd.setContent(&xf, false, &errorString, &errorLine, &errorColumn))
-            setError(QString("HaarCascade read XML failure: %1 at %2,%3")
-                    .arg(errorString).arg(errorLine).arg(errorColumn));
+            setError(Critical, QString("HaarCascade read XML failure: %1 at %2,%3")
+                                .arg(errorString).arg(errorLine).arg(errorColumn));
         else
             set(dd.documentElement());
     }

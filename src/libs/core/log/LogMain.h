@@ -3,6 +3,8 @@
 
 #include <QUrl>
 
+#include "../boost/log/Logger.h"
+
 class LogMain
 {
 public:
@@ -12,7 +14,8 @@ public:
 private:
     bool addTroll(const QUrl & url);
     
-    
+private:
+    E2BLog::Logger::CorePtr mpCore =  0;
 };
 
 #endif // LOGMAIN_H

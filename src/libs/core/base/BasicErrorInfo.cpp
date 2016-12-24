@@ -7,10 +7,17 @@ void BasicErrorInfo::resetError(void)
     mCode = 0, mString.clear(), mData.clear();
 }
 
-bool BasicErrorInfo::setError(const ErrorCode code,
+bool BasicErrorInfo::setError(const Severity sev)
+{
+    Severity::set(sev);
+    return isError();
+}
+
+bool BasicErrorInfo::setError(const Severity sev, const ErrorCode code,
                               const ErrorString & string,
                               const ErrorData & data)
 {
+    Severity::set(sev);
     mCode = code, mData = data;
     mString = string.isEmpty()
             ? string
@@ -20,15 +27,17 @@ bool BasicErrorInfo::setError(const ErrorCode code,
     return isError();
 }
 
-bool BasicErrorInfo::setError(const ErrorString & string,
+bool BasicErrorInfo::setError(const Severity sev, const ErrorString & string,
                               const ErrorData & data)
 {
+    Severity::set(sev);
     mCode = -1, mString = string, mData = data;
     return isError();
 }
 
-bool BasicErrorInfo::setError(const ErrorData & data)
+bool BasicErrorInfo::setError(const Severity sev, const ErrorData & data)
 {
+    Severity::set(sev);
     mCode = data.type();
     mString = mCode ? data.typeName() : QString();
     mData = data;
@@ -37,7 +46,12 @@ bool BasicErrorInfo::setError(const ErrorData & data)
 
 bool BasicErrorInfo::isError(void) const
 {
-    return !! mCode;
+    return Severity::is(mErrorSeverity);
+}
+
+Severity BasicErrorInfo::severity(void) const
+{
+    return Severity::value();
 }
 
 ErrorCode BasicErrorInfo::errorCode(void) const
