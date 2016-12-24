@@ -24,8 +24,9 @@ private: // tasks
     HaarCannyFrame cannyPruning(void) const; // consider BitFrame return
     bool evaluateCanny(const HaarFramePoint pt);
     HaarObsSizes calculateSizes(void) const;
-    HaarObsList process(const HaarStage & stage,
-                        const HaarObsSize size); // massively parallel
+    HaarObsList process(const HaarObsSize size); // massively parallel
+    HaarObsList process(const HaarStage & stage, // called by ^^^^
+                        const HaarObsSize size);
 
 private:
     HaarDetectorSize mSize;
