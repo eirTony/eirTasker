@@ -6,13 +6,13 @@
 
 template <class PIXEL>
     class FRAMESHARED_EXPORT Frame
+            : public Matrix<PIXEL>
 {
 
 public:
     Frame(void);
 
 private:
-    Matrix<PIXEL> mMatrix;
 };
 
 #include "Frame.cpp"

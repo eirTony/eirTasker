@@ -13,6 +13,13 @@ public:
              const HaarRectWeight weight);
     void set(const QString & string);
 
+    void scaleBy(const HaarFeatureScale scale);
+
+    const HaarRectRect & rect(void) const;
+    const HaarRectWeight & weight(void) const;
+
+    void operator *= (const HaarFeatureScale scale);
+
 private:
     HaarRectRect mRect;
     HaarRectWeight mWeight;

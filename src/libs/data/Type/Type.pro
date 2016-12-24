@@ -20,7 +20,8 @@ SOURCES += Type.cpp \
     Index.cpp \
     QQPolygon.cpp \
     TypeLib.cpp \
-    Integer.cpp
+    Integer.cpp \
+    QQRect.cpp
 
 #   Matrix.cpp
 
@@ -33,7 +34,8 @@ HEADERS += Type.h\
     TypeLib.h \
     Matrix.h \
     Integer.h \
-    TInteger.h
+    TInteger.h \
+    QQRect.h
 
 unix {
     target.path = /usr/lib

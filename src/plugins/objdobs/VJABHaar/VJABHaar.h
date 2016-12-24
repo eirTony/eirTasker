@@ -7,9 +7,10 @@
 #include <QSize>
 
 #include "../../../libs/data/Type/Matrix.h"
+#include "../../../libs/data/Type/QQRect.h"
 #include "../../../libs/image/frame/Frame.h"
 
-typedef QRect HaarRectRect;
+typedef QQRect HaarRectRect;
 typedef qreal HaarRectWeight;
 
 typedef qreal   HaarFeatureThreshold;
@@ -20,6 +21,9 @@ typedef bool    HaarFeatureBool;
 typedef HaarFeatureBool HaarFeatureIsRight;
 typedef qreal   HaarFeatureScale;
 typedef Matrix<int> HaarFeatureSquares;
+typedef int HaarFeatureCoordinate;
+typedef double HaarFeatureInternalDouble;
+typedef QRect HaarFeatureInternalRect;
 
 typedef HaarFeatureThreshold    HaarStageThreshold;
 typedef bool                    HaarStageBoolean;

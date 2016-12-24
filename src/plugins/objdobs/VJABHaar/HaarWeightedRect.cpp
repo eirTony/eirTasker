@@ -28,8 +28,28 @@ void HaarWeightedRect::set(const QString & string)
 
     str >> left >> top >> right >> bottom >> weight;
 
-    mRect = QRect(QPoint(left,top), QPoint(bottom, right));
+    mRect = QQRect(QPoint(left,top), QPoint(bottom, right));
     mWeight = weight;
 }
 
 
+void HaarWeightedRect::scaleBy(const HaarFeatureScale scale)
+{
+    mRect *= scale;
+}
+
+const HaarRectRect & HaarWeightedRect::rect(void) const
+{
+    return mRect;
+}
+
+const HaarRectWeight & HaarWeightedRect::weight(void) const
+{
+    return mWeight;
+}
+
+
+void HaarWeightedRect::operator *= (const HaarFeatureScale scale)
+{
+    scaleBy(scale);
+}

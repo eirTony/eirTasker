@@ -10,11 +10,15 @@ class HaarFeature
 {
 public:
     HaarFeature(void);
+    void setSize(const HaarFeatureCoordinate width,
+                 const HaarFeatureCoordinate height);
     void addRect(const HaarWeightedRect rect);
-    HaarFeatureIsRight getLeftRight(const HaarGreyFrame & grey,
-                                    const HaarFeatureSquares & squares,
-                                    const HaarFramePoint pt,
-                                    const HaarFeatureScale scale);
+
+    HaarFeatureSize size(void) const;
+    HaarFeatureIsRight isRight(const HaarSumsFrame & sums,
+                               const HaarSquaresFrame & squares,
+                               const HaarFramePoint pt,
+                               const HaarFeatureScale scale);
 
 private:
     QList<HaarWeightedRect>         mRectList;
