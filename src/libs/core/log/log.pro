@@ -19,14 +19,16 @@ SOURCES += LogLib.cpp \
     LogItem.cpp \
     Log.cpp \
     LogObject.cpp \
-    LogMain.cpp
+    LogMain.cpp \
+    SeverityFilter.cpp
 
 HEADERS += LogLib.h\
         log_global.h \
     LogItem.h \
     Log.h \
     LogObject.h \
-    LogMain.h
+    LogMain.h \
+    SeverityFilter.h
 
 unix {
     target.path = /usr/lib

@@ -1,11 +1,4 @@
 #include "LogFilter.h"
 
-LogFilter::LogFilter(void)
-{
+E2BLog::LogFilter::LogFilter(void) {;}
 
-}
-
-void LogFilter::setMinSeverity(enum LogSeverity sev)
-{
-    mSeverity = sev;
-}

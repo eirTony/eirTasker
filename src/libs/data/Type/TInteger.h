@@ -6,8 +6,8 @@ template <typename INT> class TInteger
 public:
     TInteger(void) {;}
     TInteger(const INT value) : mInt(value & csmMask) {;}
-    bool isNull(void) const { return mInt & csmNull; }
-    INT & operator & (void) const { return & mInt & csmMask; }
+    bool isNull(void) const { return !! mInt & csmNull; }
+    INT & operator & (void) const { return &(mInt & csmMask); }
 
 private:
     const static INT csmNull = 1 << sizeof(INT) * 8 - 1;

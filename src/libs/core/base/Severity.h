@@ -9,19 +9,22 @@
     NV(BaseTrace, = 100)   \
     NV(Trace,) \
     NV(MaxTrace,) \
-    NV(BaseUser, = 200) \
+    NV(BaseDebug, = 200) \
+    NV(Debug, ) \
+    NV(MaxDebug, ) \
+    NV(BaseUser, = 300) \
     NV(User,) \
     NV(MaxUser,) \
-    NV(BaseInfo, = 300) \
+    NV(BaseInfo, = 400) \
     NV(Info,) \
     NV(MaxInfo,) \
-    NV(BaseWarning, = 400) \
+    NV(BaseWarning, = 500) \
     NV(Warning,) \
     NV(MaxWarning,) \
-    NV(BaseCritical, = 500) \
+    NV(BaseCritical, = 600) \
     NV(Critical,) \
     NV(MaxCritical,) \
-    NV(BaseFatal, = 600) \
+    NV(BaseFatal, = 700) \
     NV(Fatal, ) \
     NV(MaxFatal,) \
     NV(MaxSeverity,) \
