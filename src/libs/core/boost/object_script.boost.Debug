@@ -8,6 +8,7 @@ INPUT(
 ./debug\LogAttribute.o
 ./debug\LogFormatter.o
 ./debug\LogFilter.o
+./debug\LogSeverity.o
 ./debug\moc_Logger.o
 ./debug\moc_LogSink.o
 );

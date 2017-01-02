@@ -13,6 +13,7 @@ DEFINES += LOG_LIBRARY
 
 include (../coreCommon.pri)
 
+INCLUDEPATH *= /lang/boost_1_63_0
 LIBS *= -lboost
 
 SOURCES += LogLib.cpp \

@@ -4,7 +4,8 @@
 
 #include <QObject>
 
-#include <boost/log/core/core.hpp>
+#include </lang/boost_1_63_0/boost/log/core.hpp>
+//#include <boost/log/core/core.hpp>
 
 namespace EIRC2 { namespace BoostLib { namespace Logger { } } }
 
