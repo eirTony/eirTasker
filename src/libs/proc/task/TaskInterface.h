@@ -8,7 +8,7 @@
 
 class TaskObject;
 
-class TaskInterface : public BasicErrorInfo
+class TASKSHARED_EXPORT TaskInterface : public BasicErrorInfo
 {
 public:
     enum FlagIndex
@@ -29,10 +29,14 @@ public:
 public:
     TaskInterface(void);
     TaskInterface(const TaskKey taskKey,
-                  TaskObject * taskObject,
-                  const Entity input,
-                  const Entity config=Entity(),
-                  const Entity::List contextList=Entity::List());
+                  TaskObject * taskObject
+#if 0
+                                         ,
+                  const Entity & input,
+                  const Entity & config=Entity(),
+                  const EntityList & contextList=EntityList()
+#endif
+                );
     ~TaskInterface();
 
 protected:
@@ -43,10 +47,12 @@ protected:
 private:
     TaskKey         mTaskKey;
     TaskObject *    mpTaskObject;
-    Entity::List    mContextList;
+#if 0
+    EntityList    mContextList;
     Entity          mConfigEntity;
     Entity          mInputEntity;
     Entity          mResultsEntity;
+#endif
     Flags           mFlags;
 
 };

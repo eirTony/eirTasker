@@ -1,7 +1,9 @@
 # ./src/build/srcCommon.pri
 
 QMAKE_CXXFLAGS *= -std=c++11
+#QMAKE_CXXFLAGS *= -DQT_NO_DEPRECATED
 QMAKE_CXXFLAGS_DEBUG *= -Og
+
 
 # relative to ./src/apps|libs/console|core/TaskConsole|boost
 INCLUDEPATH *= ../../../../libs/core

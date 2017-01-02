@@ -11,7 +11,7 @@ TEMPLATE = app
 
 include (../consoleCommon.pri)
 
-LIBS *= -lboost
+#LIBS *= -lboost
 
 SOURCES += main.cpp \
     TaskConsole.cpp \

@@ -4,4 +4,5 @@ SUBDIRS += \
     core \
     data \
     proc \
-    image
+    image \
+    third

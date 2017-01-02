@@ -1,5 +1,7 @@
 #include "Severity.h"
 
+DEFINE_ENUMERATION(Severity, SEVERITY_ENUM)
+
 bool Severity::is(const Severity sev) const
 {
     return Enumeration::value() >= sev;

@@ -10,6 +10,10 @@
 #include "EntityType.h"
 class EntityEncoding;
 
+#if 1
+typedef QSettings Entity;
+typedef QList<Entity> EntityList;
+#else
 class ENTITYSHARED_EXPORT Entity : public QSettings
 {
 public:
@@ -29,5 +33,5 @@ private:
     EntityType mType;
     EntityKey mKey;
 };
-
+#endif
 #endif // ENTITY_H

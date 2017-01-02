@@ -1,7 +1,8 @@
 #include "GreyFrame.h"
 
-GreyFrame::GreyFrame(void) {;}
-
+#if 0
+template <GreyPixel> GreyFrame::GreyFrame(void) : Frame<GreyPixel>() {;}
+#endif
 
 
 

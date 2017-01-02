@@ -26,7 +26,7 @@ public:
     LogItemData(void)
     {
         DEFINE_DATAPROPS_CTORS(LOGITEM_DATAPROPS)
-    }
+    };
 };
 
 class LOGSHARED_EXPORT LogItem

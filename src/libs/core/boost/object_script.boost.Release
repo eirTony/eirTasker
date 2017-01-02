@@ -8,6 +8,7 @@ INPUT(
 ./release\LogAttribute.o
 ./release\LogFormatter.o
 ./release\LogFilter.o
+./release\LogSeverity.o
 ./release\moc_Logger.o
 ./release\moc_LogSink.o
 );

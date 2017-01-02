@@ -1,6 +1,8 @@
 #include "QQRect.h"
 
 QQRect::QQRect(void) {;}
+QQRect::QQRect(const QQRect & other) : QRect(other) {;}
+//{ set(other.topLeft(), other.bottomRight()); }
 QQRect::QQRect(const QPoint tl, const QPoint br) { set(tl, br); }
 
 void QQRect::set(const QRect other)

@@ -1,5 +1,6 @@
 #ifndef BASICERRORINFO_H
 #define BASICERRORINFO_H
+#include "BaseLib.h"
 
 #include <QString>
 #include <QVariant>
@@ -10,7 +11,7 @@ typedef qint64      ErrorCode;
 typedef QString     ErrorString;
 typedef QVariant    ErrorData;
 
-class BasicErrorInfo : public Severity
+class BASESHARED_EXPORT BasicErrorInfo : public Severity
 {
 public:
     BasicErrorInfo(void);

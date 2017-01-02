@@ -6,7 +6,7 @@
 
 #include "../Kii/BitKey.h"
 
-class ENTITYSHARED_EXPORT EntityKey : public BitKey
+class ENTITYSHARED_EXPORT EntityKey // : public BitKey
 {
 public:
     typedef QList<EntityKey> List;

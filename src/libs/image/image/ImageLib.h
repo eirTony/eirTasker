@@ -1,11 +1,12 @@
 #ifndef IMAGELIB_H
 #define IMAGELIB_H
 
+#include "image_global.h"
 
-class ImageLib
+class IMAGESHARED_EXPORT ImageLib
 {
 public:
-    ImageLib();
+    ImageLib(void);
 };
 
 #endif // IMAGELIB_H

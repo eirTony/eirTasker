@@ -2,6 +2,9 @@
 #define LOGSEVERITY_H
 #include "../BoostLib.h"
 
+#include "Logger.h"
+
+#ifdef USE_BOOST_LOG
 /*
     BOOST_LOG_TRIVIAL(trace) << "A trace severity message";
     BOOST_LOG_TRIVIAL(debug) << "A debug severity message";
@@ -12,9 +15,6 @@
 */
 
 #include <boost/log/keywords/severity.hpp>
-
-#include "Logger.h"
-
 namespace EIRC2 { namespace BoostLib { namespace Logger {
 
 class LogSeverity
@@ -41,5 +41,6 @@ private:
 };
 
 } } } // Logger, BoostLib, EIRC2
+#endif
 
 #endif // LOGSEVERITY_H

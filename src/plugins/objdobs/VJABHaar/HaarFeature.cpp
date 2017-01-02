@@ -13,6 +13,11 @@ HaarFeature::HaarFeature(void)
     , mHasLeftNode(false)
     , mHasRightNode(false) {;}
 
+HaarFeatureSize HaarFeature::size(void) const
+{
+    return mSize;
+}
+
 void HaarFeature::addRect(const HaarWeightedRect rect)
 {
     mRectList.append(rect);

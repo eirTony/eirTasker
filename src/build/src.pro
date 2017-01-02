@@ -4,7 +4,7 @@ SUBDIRS += \
     ../libs \
     ../apps \
     ../plugins \
-    other
+    other \
 
 
 #    ../Notes \
