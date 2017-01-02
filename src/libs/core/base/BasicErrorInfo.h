@@ -4,23 +4,31 @@
 #include <QString>
 #include <QVariant>
 
+#include "Severity.h"
+
 typedef qint64      ErrorCode;
 typedef QString     ErrorString;
 typedef QVariant    ErrorData;
 
-class BasicErrorInfo
+class BasicErrorInfo : public Severity
 {
 public:
     BasicErrorInfo(void);
     void resetError(void);
-    bool setError(const ErrorCode code,
+    bool setError(const Severity sev);
+    bool setError(const Severity sev,
+                  const ErrorCode code,
                   const ErrorString & string=ErrorString(),
                   const ErrorData & data=ErrorData());
-    bool setError(const ErrorString & string,
+    bool setError(const Severity sev,
+                  const ErrorString & string,
                   const ErrorData & data=ErrorData());
-    bool setError(const ErrorData & data);
+    bool setError(const Severity sev,
+                  const ErrorData & data);
 
+    bool isEmpty(void) const;
     bool isError(void) const;
+    Severity severity(void) const;
     ErrorCode errorCode(void) const;
     ErrorString errorString(void) const;
     ErrorData errorData(void) const;
@@ -30,6 +38,9 @@ private:
     ErrorCode   mCode;
     ErrorString mString;
     ErrorData   mData;
+
+private:
+    Severity    mErrorSeverity = Severity::BaseCritical;
 };
 
 #endif // BASICERRORINFO_H

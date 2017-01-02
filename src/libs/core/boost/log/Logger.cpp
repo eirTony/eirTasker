@@ -2,11 +2,7 @@
 
 const E2BLog::Logger::CorePtr E2BLog::Logger::csmpCore = BL::core::get();
 
-E2BLog::Logger::Logger(QObject * parent)
-    : QObject(parent)
-{
-
-}
+E2BLog::Logger::Logger(QObject * parent) : QObject(parent) {;}
 
 // static
 void E2BLog::Logger::enable(const bool is)

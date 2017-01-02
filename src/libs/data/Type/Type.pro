@@ -13,7 +13,7 @@ TEMPLATE = lib
 
 DEFINES += TYPE_LIBRARY
 
-#include(../dataCommon.pri)
+include(../dataCommon.pri)
 
 SOURCES += Type.cpp \
     Flags.cpp \
@@ -21,7 +21,8 @@ SOURCES += Type.cpp \
     QQPolygon.cpp \
     TypeLib.cpp \
     Integer.cpp \
-    QQRect.cpp
+    QQRect.cpp \
+    StreamParsed.cpp
 
 #   Matrix.cpp
 
@@ -35,7 +36,8 @@ HEADERS += Type.h\
     Matrix.h \
     Integer.h \
     TInteger.h \
-    QQRect.h
+    QQRect.h \
+    StreamParsed.h
 
 unix {
     target.path = /usr/lib

@@ -1,17 +1,22 @@
 #ifndef LOGFILTER_H
 #define LOGFILTER_H
+#include "../BoostLib.h"
 
-#include "log/LogRecord.h"
+#include "Logger.h"
+#include "LogRecord.h"
+#include "LogSeverity.h"
 
-class LogFilter
+namespace EIRC2 { namespace BoostLib { namespace Logger {
+
+class BOOSTSHARED_EXPORT LogFilter
 {
 public:
     LogFilter(void);
 
-    void setMinSeverity(enum LogSeverity sev);
 
 private:
-    LogSeverity mSeverity = NullSeverity;
 };
+
+} } } // Logger, BoostLib, EIRC2
 
 #endif // LOGFILTER_H

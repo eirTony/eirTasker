@@ -2,22 +2,25 @@
 
 BasicErrorObject::BasicErrorObject(QObject * parent) : QObject(parent) {;}
 
-void BasicErrorObject::handleError(const ErrorCode code,
+void BasicErrorObject::handleError(const Severity sev,
+                                   const ErrorCode code,
               const ErrorString & string,
               const ErrorData & data)
 {
-    if (setError(code, string, data))   emitError();
+    if (setError(sev, code, string, data))   emitError();
 }
 
-void BasicErrorObject::handleError(const ErrorString & string,
+void BasicErrorObject::handleError(const Severity sev,
+                                   const ErrorString & string,
               const ErrorData & data)
 {
-    if (setError(string, data))   emitError();
+    if (setError(sev, string, data))   emitError();
 }
 
-void BasicErrorObject::handleError(const ErrorData & data)
+void BasicErrorObject::handleError(const Severity sev,
+                                   const ErrorData & data)
 {
-    if (setError(data))   emitError();
+    if (setError(sev, data))   emitError();
 }
 
 void BasicErrorObject::emitError(void)
