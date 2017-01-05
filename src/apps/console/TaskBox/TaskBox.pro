@@ -9,5 +9,9 @@ TEMPLATE = app
 include(../consoleCommon.pri)
 LIBS *= -ltype -llog
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    MainThread.cpp
+
+HEADERS += \
+    MainThread.h
 

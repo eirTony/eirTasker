@@ -5,7 +5,7 @@ QMAKE_CXXFLAGS *= -std=c++11
 QMAKE_CXXFLAGS_DEBUG *= -Og
 
 # local options
-QMAKE_CXXFLAGS *= -DEIRC_USE_FUNCINFO_WORKAROUND
+QMAKE_CXXFLAGS *= -DeIR_USE_FUNCINFO_WORKAROUND
 
 # relative to ./src/apps|libs/console|core/TaskConsole|boost
 INCLUDEPATH *= ../../../../libs/core

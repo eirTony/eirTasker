@@ -4,7 +4,9 @@ DEFINE_DATAPROPS(LogItem, LogItemData)
 void LogItem::ctor(void) {;} // for DataProperty default ctor
 void LogItem::dtor(void) {;} // for DataProperty dtor
 
-LogItem::LogItem(const Severity & sev,
+#ifndef eIR_USE_FUNCINFO_WORKAROUND
+
+LogItem::LogItem(const Severity::type & sev,
                  const FuncInfo & fni,
                  const QString & msg,
                  const QVariantList & vars)
@@ -16,4 +18,22 @@ LogItem::LogItem(const Severity & sev,
     setVariables(vars);
 }
 
+#else
 
+LogItem::LogItem(const Severity::type & sev,
+        const QString & func,
+        const QFileInfo & file,
+        const int line,
+        const QString & msg,
+        const QVariantList & vars)
+    : data(new LogItemData)
+{
+    setSeverity(sev);
+    setFunction(func);
+    setFileInfo(file);
+    setFileLine(line);
+    setFormat(msg);
+    setVariables(vars);
+}
+
+#endif // eIR_USE_FUNCINFO_WORKAROUND
