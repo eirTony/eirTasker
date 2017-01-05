@@ -25,7 +25,6 @@ SOURCES += LogLib.cpp \
     SeverityFilter.cpp \
     LogOutput.cpp \
     TrollOutput.cpp \
-    LogFuncInfo.cpp
 
 HEADERS += LogLib.h\
         log_global.h \
@@ -36,7 +35,6 @@ HEADERS += LogLib.h\
     SeverityFilter.h \
     LogOutput.h \
     TrollOutput.h \
-    LogFuncInfo.h \
     logback.h \
     logmacros.h
 

@@ -18,7 +18,6 @@ Enumeration::Enumeration(void)
 
     @arg    const int value a valid integer
     @note   if the specified value is not valid, an invalid item is constructed
-
 */
 Enumeration::Enumeration(Named<int> * p,
                          const int value)
@@ -55,18 +54,22 @@ bool Enumeration::isEmpty(void) const
 
 Enumeration Enumeration::first(void) const
 {
-    return isEmpty() ? Enumeration() : Enumeration(name_map, name_map->first(1));
+    return isEmpty()
+            ? Enumeration()
+            : Enumeration(name_map, name_map->first(1));
 }
 
 Enumeration Enumeration::last(void) const
 {
-    return isEmpty() ? Enumeration() : Enumeration(name_map, name_map->last(1));
+    return isEmpty()
+            ? Enumeration()
+            : Enumeration(name_map, name_map->last(1));
 }
 
 BasicName Enumeration::nameOf(const int value) const
 {
-    BasicName result = name_map ? name_map->value(value) : BasicName();
-    return result;
+    return name_map
+            ? name_map->value(value) : BasicName();
 }
 
 int Enumeration::valueOf(const BasicName & name) const
@@ -138,7 +141,7 @@ void Enumeration::set(const BasicName & name)
     }
 }
 
-void Enumeration::setInvalid(void)
+void Enumeration::invalidate(void)
 {
     value_i = 0, name_s.clear(), name_map = 0;
 }
@@ -195,8 +198,8 @@ QList<Enumeration> Enumeration::all(void)
 
 QList<int> Enumeration::values(void) const
 {
-    QList<int> result = name_map ? name_map->keys() : QList<int>();
-    return result;
+    return name_map ? name_map->keys()
+                    : QList<int>();
 }
 
 BasicNameList Enumeration::nameFlags(int f)
@@ -228,12 +231,15 @@ int Enumeration::value(const BasicName & name)
     return result;
 }
 
-QList<Enumeration> Enumeration::parse(const QString & string)
+QList<Enumeration>
+    Enumeration::parse(const QString & string)
 {
     QList<Enumeration> result;
 
-    foreach (QString s, string.simplified()
-                              .split(' ', QString::SkipEmptyParts))
+    foreach (QString s, string
+                        .simplified()
+                        .split(' ',
+                               QString::SkipEmptyParts))
     {
         bool negate = false;
         bool toggle = false;

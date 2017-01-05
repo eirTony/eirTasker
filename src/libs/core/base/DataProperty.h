@@ -4,7 +4,7 @@ Usage:
 
 In .h file:
 @code
-#include <QSharedData>
+#include <QSharedDataPointer>
 
 #include <eirBase/DataProperty.h>
 
@@ -12,7 +12,7 @@ In .h file:
     TND(MillisecondTime, TimeStamp, MillisecondTime()) \
     TND(LogLevel, Level, LogLevel::Null) \
 
-class LogItemData : public QSharedData
+class LogItemData : public QSharedDataPointer
 {
     DECLARE_CHILD_DATAPROPS(LOGITEM_DATAPROPS)
 public:
@@ -27,6 +27,7 @@ class EIRCORESHARED_EXPORT LogItem
     DECLARE_PARENT_DATAPROPS(LOGITEM_DATAPROPS)
     DECLARE_DATAPROPS(LogItem, LogItemData)
     LogItem(const int size); // alternate ctor
+    int size_i;
 };
 @endcode
 
@@ -36,7 +37,7 @@ In .cpp file:
 
 DEFINE_DATAPROPS(LogItem, LogItemData)
 
-LogItem::LogItem(const int size)
+LogItem::LogItem(const int size) // alternate ctor
     : data(new LogItemData)
     , size_i(size)
 {
@@ -64,10 +65,6 @@ void VariableSet::dtor(void) {}
         TYPE * ptr##NAME(void)              { return (data) ? data->ptr##NAME() : 0; } \
         const TYPE * ptr##NAME(void) const  { return (data) ? data->ptr##NAME() : 0; } \
 
-/*
-        TYPE & ref##NAME(void)              { return (data) ? data->ref##NAME() : 0; } \
-*/
-
 #define DATAPROP_DECLARE_CHILD(TYPE, NAME, DFLT) \
     private: \
         TYPE TYPE##_##NAME; \
@@ -77,10 +74,6 @@ void VariableSet::dtor(void) {}
         TYPE get##NAME(void) const          { return TYPE##_##NAME; } \
         TYPE * ptr##NAME(void)              { return & TYPE##_##NAME; } \
         const TYPE * ptr##NAME(void) const  { return & TYPE##_##NAME; } \
-
-/*
-        TYPE & ref##NAME(void)              { return & TYPE##_##NAME; } \
-*/
 
 #define DATAPROP_CTOR(TYPE, NAME, DFLT) \
         TYPE##_##NAME = DFLT; \
@@ -106,10 +99,10 @@ void VariableSet::dtor(void) {}
         QSharedDataPointer<DATA> data; \
 
 #define DEFINE_DATAPROPS(CLASS, DATA) \
-CLASS::CLASS() : data(new DATA) { ctor(); } \
-CLASS::CLASS(const CLASS &rhs) : data(rhs.data) {} \
-CLASS &CLASS::operator=(const CLASS &rhs) \
-{ if (this != &rhs) data.operator=(rhs.data); return *this; } \
-CLASS::~CLASS() { dtor(); } \
+    CLASS::CLASS() : data(new DATA) { ctor(); } \
+    CLASS::CLASS(const CLASS &rhs) : data(rhs.data) {} \
+    CLASS &CLASS::operator=(const CLASS &rhs) \
+    { if (this != &rhs) data.operator=(rhs.data); return *this; } \
+    CLASS::~CLASS() { dtor(); } \
 
 #endif // DATAPROPERTY_H

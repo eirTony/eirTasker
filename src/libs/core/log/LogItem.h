@@ -6,20 +6,19 @@
 #include <QVariantList>
 
 #include "../base/DataProperty.h"
+#include "../base/FuncInfo.h"
 #include "../base/Severity.h"
-
-typedef QString FunctionInfo;
 typedef QString ProcessorId;
 
 #define LOGITEM_DATAPROPS(TND) \
     TND(ProcessorId, ProcessorId, ProcessorId()) \
     TND(quint64, TimeStamp,  0) \
-    TND(Severity, Severity,  Severity()) \
-    TND(FunctionInfo, FunctionInfo, FunctionInfo()) \
+    TND(Severity, Severity,  Severity::NullSeverity) \
+    TND(FuncInfo, FuncInfo, FuncInfo()) \
     TND(QString, Format, QString()) \
     TND(QVariantList, Variables, QVariantList()) \
 
-class LogItemData : public QSharedData
+class LOGSHARED_EXPORT LogItemData : public QSharedData
 {
     DECLARE_CHILD_DATAPROPS(LOGITEM_DATAPROPS)
 public:
@@ -34,6 +33,11 @@ class LOGSHARED_EXPORT LogItem
     DECLARE_PARENT_DATAPROPS(LOGITEM_DATAPROPS)
     DECLARE_DATAPROPS(LogItem, LogItemData)
 public:
+    LogItem(const Severity & sev,
+            const FuncInfo & fni,
+            const QString & msg,
+            const QVariantList & vars=QVariantList());
+
 };
 
 #endif // LOGITEM_H

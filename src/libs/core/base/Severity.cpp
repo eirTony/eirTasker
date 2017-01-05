@@ -9,7 +9,7 @@ bool Severity::is(const Severity sev) const
 
 Severity Severity::level(void) const
 {
-    Severity sev;
+    Severity sev; // null Enumeration
     int v = value();
 
     if (false)

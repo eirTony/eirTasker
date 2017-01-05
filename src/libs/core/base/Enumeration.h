@@ -39,7 +39,9 @@ The following goals were used in the design of this facility.
 
 class CLASSSHARED_EXPORT EnumClass : public Enumeration
 {
-    DECLARE_ENUMERATION(EnumClass, ENUMCLASS_ENUM)
+    DECLARE_ENUMERATION(EnumClass,  // private
+            ENUMCLASS_ENUM)
+    // other stuff as needed
 };
 
 @endcode
@@ -48,6 +50,7 @@ class CLASSSHARED_EXPORT EnumClass : public Enumeration
 @code
 #include "EnumClass.h"
 DEFINE_ENUMERATION(EnumClass, ENUMCLASS_ENUM);
+// other support functions as needed
 @endcode
 
 */
@@ -69,7 +72,7 @@ public:
     bool is(const int value) const;
     void set(const int value);
     void set(const BasicName & value);
-    void setInvalid(void);
+    void invalidate(void);
     bool operator == (const Enumeration & other) const;
     bool operator < (const Enumeration & other) const;
     operator int (void) const;

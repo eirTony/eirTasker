@@ -1,12 +1,13 @@
 #ifndef LOGFUNCINFO_H
 #define LOGFUNCINFO_H
+#include "LogLib.h"
 
 #include <QFileInfo>
 #include <QSharedDataPointer>
 
 #include "../base/FuncInfo.h"
 
-class LogFuncInfoData;
+class LOGSHARED_EXPORT LogFuncInfoData;
 
 #define LOGFUNCINFO_DATAPROPS(TND) \
     TND(QFileInfo, FileInfo, QFileInfo()) \
@@ -14,10 +15,10 @@ class LogFuncInfoData;
     TND(int, FuncLine, 0)    \
     TND(int, FileLine,  0) \
 
-#define LOGFUNCINFO { LogFuncInfo(QFileInfo(__FILE__), __LINE__, FuncInfo(Q_PRETTY_FUNC)) }
+#define LOGFUNCINFO { LogFuncInfo(QFileInfo(__FILE__), __LINE__, FUNCINFO) }
 
 
-class LogFuncInfo
+class LOGSHARED_EXPORT LogFuncInfo
 {
 public:
     DECLARE_CHILD_DATAPROPS(LOGFUNCINFO_DATAPROPS)
