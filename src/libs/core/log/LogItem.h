@@ -6,9 +6,12 @@
 #include <QVariantList>
 
 #include "../base/DataProperty.h"
-#include "../base/FuncInfo.h"
 #include "../base/Severity.h"
 typedef QString ProcessorId;
+
+#ifdef eIR_USE_FUNCINFO_WORKAROUND
+
+#include "../base/FuncInfo.h"
 
 #define LOGITEM_DATAPROPS(TND) \
     TND(ProcessorId, ProcessorId, ProcessorId()) \
@@ -18,7 +21,19 @@ typedef QString ProcessorId;
     TND(QString, Format, QString()) \
     TND(QVariantList, Variables, QVariantList()) \
 
-class LOGSHARED_EXPORT LogItemData : public QSharedData
+#else
+    TND(ProcessorId, ProcessorId, ProcessorId()) \
+    TND(quint64, TimeStamp,  0) \
+    TND(Severity, Severity,  Severity::NullSeverity) \
+    TND(QString, Function, QString()) \
+    TND(QString, FileName, QString()) \
+    TND(int, FileLine, 0) \
+    TND(QString, Format, QString()) \
+    TND(QVariantList, Variables, QVariantList()) \
+
+#endif // eIR_USE_FUNCINFO_WORKAROUND
+
+    class LOGSHARED_EXPORT LogItemData : public QSharedData
 {
     DECLARE_CHILD_DATAPROPS(LOGITEM_DATAPROPS)
 public:
@@ -33,11 +48,19 @@ class LOGSHARED_EXPORT LogItem
     DECLARE_PARENT_DATAPROPS(LOGITEM_DATAPROPS)
     DECLARE_DATAPROPS(LogItem, LogItemData)
 public:
+#ifdef eIR_USE_FUNCINFO_WORKAROUND
     LogItem(const Severity & sev,
             const FuncInfo & fni,
             const QString & msg,
             const QVariantList & vars=QVariantList());
-
+#else
+    LogItem(const Severity & sev,
+            const QString & func,
+            const QString & file,
+            const int line,
+            const QString & msg,
+            const QVariantList & vars=QVariantList());
+#endif // eIR_USE_FUNCINFO_WORKAROUND
 };
 
 #endif // LOGITEM_H

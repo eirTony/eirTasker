@@ -2,6 +2,8 @@
 #define FUNCINFO_H
 #include "BaseLib.h"
 
+#ifdef eIR_USE_FUNCINFO_WORKAROUND
+
 #include <QSharedData>
 
 #include <QFileInfo>
@@ -42,5 +44,7 @@ private:
 };
 
 #define FUNCINFO FuncInfo(Q_FUNC_INFO, QFileInfo(__FILE__), __LINE__)
+
+#endif // eIR_USE_FUNCINFO_WORKAROUND
 
 #endif // FUNCINFO_H
