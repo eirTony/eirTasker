@@ -20,7 +20,7 @@ LogItem::LogItem(const Severity::type & sev,
 
 #else
 
-LogItem::LogItem(const Severity::type & sev,
+LogItem::LogItem(const enumSeverity &sev,
         const QString & func,
         const QFileInfo & file,
         const int line,

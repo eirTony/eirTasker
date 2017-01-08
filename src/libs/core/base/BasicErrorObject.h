@@ -17,14 +17,14 @@ signals:
     void error(ErrorCode, ErrorString, ErrorData);
 
 public slots:
-    void handleError(const Severity sev,
+    void handleError(const enumSeverity sev,
                      const ErrorCode code,
                   const ErrorString & string=ErrorString(),
                   const ErrorData & data=ErrorData());
-    void handleError(const Severity sev,
+    void handleError(const enumSeverity sev,
                      const ErrorString & string,
                   const ErrorData & data=ErrorData());
-    void handleError(const Severity sev,
+    void handleError(const enumSeverity sev,
                      const ErrorData & data);
 
 };

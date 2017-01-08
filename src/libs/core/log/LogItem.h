@@ -8,7 +8,7 @@
 #include <QVariantList>
 
 #include "../base/DataProperty.h"
-#include "../base/Severity.h"
+#include "../base/BasicSeverity.h"
 typedef QString ProcessId;
 
 #ifndef eIR_USE_FUNCINFO_WORKAROUND
@@ -28,7 +28,7 @@ typedef QString ProcessId;
 #define LOGITEM_DATAPROPS(TND) \
     TND(ProcessId, PID, ProcessId()) \
     TND(quint64, TimeStamp,  0) \
-    TND(Severity, Severity,  Severity::NullSeverity) \
+    TND(enumSeverity, Severity,  NullBasicSeverity) \
     TND(QString, Function, QString()) \
     TND(QFileInfo, FileInfo, QFileInfo()) \
     TND(int, FileLine, 0) \
@@ -58,7 +58,7 @@ public:
             const QString & msg,
             const QVariantList & vars=QVariantList());
 #else
-    LogItem(const Severity::type & sev,
+    LogItem(const enumSeverity & sev,
             const QString & func,
             const QFileInfo & file,
             const int line,

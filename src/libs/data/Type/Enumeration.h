@@ -5,13 +5,13 @@
 
 #ifndef ENUMERATION_H
 #define ENUMERATION_H
-#include "BaseLib.h"
+#include "TypeLib.h"
 
 #include <QList>
 #include <QString>
 
-#include "BasicName.h"
-#include "Named.h"
+#include <../../core/base/BasicName.h>
+#include <../../core/base/Named.h>
 
 /*! @class Enumeration
  *  @brief Base class for named enumerations.
@@ -54,7 +54,7 @@ DEFINE_ENUMERATION(EnumClass, ENUMCLASS_ENUM);
 @endcode
 
 */
-class BASESHARED_EXPORT Enumeration
+class TYPESHARED_EXPORT Enumeration
 {
 public:
     Enumeration(void);

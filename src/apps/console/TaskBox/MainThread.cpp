@@ -39,7 +39,7 @@ void MainThread::init(void) // slot
     //Log::instance()::add(li);
     LogItem li(Severity::Info, fni, infoMsg);
 #else
-    LogItem li(Severity::type::Info, qfi, fi, fln, infoMsg);
+    LogItem li(Info, qfi, fi, fln, infoMsg);
 #endif // eIR_USE_FUNCINFO_WORKAROUND
 
     LogMain lm;

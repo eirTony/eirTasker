@@ -1,6 +1,6 @@
 #ifndef SEVERITY_H
 #define SEVERITY_H
-#include "BaseLib.h"
+#include "TypeLib.h"
 
 #include "Enumeration.h"
 
@@ -29,7 +29,7 @@
     NV(MaxFatal,) \
     NV(MaxSeverity,) \
 
-class BASESHARED_EXPORT Severity : public Enumeration
+class TYPESHARED_EXPORT Severity : public Enumeration
 {
     DECLARE_ENUMERATION(Severity, SEVERITY_ENUM)
 
