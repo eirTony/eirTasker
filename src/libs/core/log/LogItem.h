@@ -15,6 +15,10 @@ typedef QString ProcessId;
 
 #include "../base/FuncInfo.h"
 
+#ifdef eIR_USE_FUNCINFO_WORKAROUND
+
+#include "../base/FuncInfo.h"
+
 #define LOGITEM_DATAPROPS(TND) \
     TND(ProcessId, PID, ProcessId()) \
     TND(quint64, TimeStamp,  0) \
