@@ -1,5 +1,6 @@
 #include "Severity.h"
 
+<<<<<<< HEAD
 bool Severity::is(const Severity sev) const
 {
     return Enumeration::value() >= sev;
@@ -8,6 +9,18 @@ bool Severity::is(const Severity sev) const
 Severity Severity::level(void) const
 {
     Severity sev;
+=======
+DEFINE_ENUMERATION(Severity, SEVERITY_ENUM)
+
+bool Severity::is(const Severity sev) const
+{
+    return Enumeration::value() >= sev;
+}
+
+Severity Severity::level(void) const
+{
+    Severity sev; // null Enumeration
+>>>>>>> dev+0003
     int v = value();
 
     if (false)

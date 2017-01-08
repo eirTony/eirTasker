@@ -1,5 +1,3 @@
 #include "Frame.h"
 
-#if 0
-template<class T> Frame::Frame(void) {;}
-#endif
+template<class T> Frame<T>::Frame(void) {;}

@@ -1,6 +1,6 @@
 #include "EntityKey.h"
 
-EntityKey::EntityKey()
+EntityKey::EntityKey(void)
 {
 
 }

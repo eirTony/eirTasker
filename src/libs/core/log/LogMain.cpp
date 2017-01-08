@@ -13,7 +13,15 @@ bool LogMain::add(const QUrl & url)
         return false;
 }
 
+bool LogMain::add(const LogItem & li)
+{
+    foreach (LogOutput * pLO, mNameOutputMap)
+        mLogQueue.append(LogQueueItem(li, pLO));
+    return true;
+}
 
+
+// private
 bool LogMain::addTroll(const QUrl & url)
 {
     (void)url;

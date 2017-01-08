@@ -4,7 +4,9 @@
 
 #include <QObject>
 
-#include <boost/log/core/core.hpp>
+#ifdef USE_BOOST_LOG
+#include </lang/boost_1_63_0/boost/log/core.hpp>
+//#include <boost/log/core/core.hpp>
 
 namespace EIRC2 { namespace BoostLib { namespace Logger { } } }
 
@@ -14,6 +16,7 @@ namespace E2Boost = E2::BoostLib;
 namespace E2BLog = E2Boost::Logger;
 
 namespace EIRC2 { namespace BoostLib { namespace Logger {
+#endif
 
 class LogSink;
 
@@ -23,6 +26,7 @@ class BOOSTSHARED_EXPORT Logger : public QObject
 public:
     Logger(QObject * parent=0);
 
+#ifdef USE_BOOST_LOG
 public:
     typedef BL::core_ptr CorePtr;
 
@@ -34,8 +38,11 @@ public: // static
 
 private:
     const static CorePtr csmpCore;
+#endif
 };
 
+#ifdef USE_BOOST_LOG
 } } } // Logger, BoostLib, EIRC2
+#endif
 
 #endif // LOGGER_H

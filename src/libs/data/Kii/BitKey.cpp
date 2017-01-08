@@ -1,6 +1,6 @@
 #include "BitKey.h"
 
-BitKey::BitKey()
+BitKey::BitKey(void)
 {
 
 }

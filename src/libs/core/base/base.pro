@@ -19,8 +19,8 @@ SOURCES += BaseLib.cpp \
     BasicErrorObject.cpp \
     BasicId.cpp \
     BasicName.cpp \
-    Enumeration.cpp \
-    Severity.cpp \
+    BasicSeverity.cpp \
+    FuncInfo.cpp
 
 HEADERS += BaseLib.h\
         base_global.h \
@@ -28,14 +28,14 @@ HEADERS += BaseLib.h\
     BasicErrorInfo.h \
     BasicErrorObject.h \
     DataProperty.h \
-    Enumeration.h \
     Named.h \
-    Severity.h \
+    BasicSeverity.h \
     Singleton.h \
     BasicName.h \
     BasicId.h \
     Named.h \
-    DataProperty.h
+    DataProperty.h \
+    FuncInfo.h
 
 unix {
     target.path = /usr/lib

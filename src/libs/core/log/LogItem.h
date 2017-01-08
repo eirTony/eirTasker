@@ -3,30 +3,52 @@
 #include "LogLib.h"
 
 #include <QSharedData>
+
+#include <QFileInfo>
 #include <QVariantList>
 
 #include "../base/DataProperty.h"
-#include "../base/Severity.h"
+#include "../base/BasicSeverity.h"
+typedef QString ProcessId;
 
-typedef QString FunctionInfo;
-typedef QString ProcessorId;
+#ifndef eIR_USE_FUNCINFO_WORKAROUND
+
+#include "../base/FuncInfo.h"
+
+#ifdef eIR_USE_FUNCINFO_WORKAROUND
+
+#include "../base/FuncInfo.h"
 
 #define LOGITEM_DATAPROPS(TND) \
-    TND(ProcessorId, ProcessorId, ProcessorId()) \
+    TND(ProcessId, PID, ProcessId()) \
     TND(quint64, TimeStamp,  0) \
-    TND(Severity, Severity,  Severity()) \
-    TND(FunctionInfo, FunctionInfo, FunctionInfo()) \
+    TND(Severity, Severity,  Severity::NullSeverity) \
+    TND(FuncInfo, FuncInfo, FuncInfo()) \
     TND(QString, Format, QString()) \
     TND(QVariantList, Variables, QVariantList()) \
 
-class LogItemData : public QSharedData
+#else
+
+#define LOGITEM_DATAPROPS(TND) \
+    TND(ProcessId, PID, ProcessId()) \
+    TND(quint64, TimeStamp,  0) \
+    TND(enumSeverity, Severity,  NullBasicSeverity) \
+    TND(QString, Function, QString()) \
+    TND(QFileInfo, FileInfo, QFileInfo()) \
+    TND(int, FileLine, 0) \
+    TND(QString, Format, QString()) \
+    TND(QVariantList, Variables, QVariantList()) \
+
+#endif // eIR_USE_FUNCINFO_WORKAROUND
+
+    class LOGSHARED_EXPORT LogItemData : public QSharedData
 {
     DECLARE_CHILD_DATAPROPS(LOGITEM_DATAPROPS)
 public:
     LogItemData(void)
     {
         DEFINE_DATAPROPS_CTORS(LOGITEM_DATAPROPS)
-    }
+    };
 };
 
 class LOGSHARED_EXPORT LogItem
@@ -34,6 +56,19 @@ class LOGSHARED_EXPORT LogItem
     DECLARE_PARENT_DATAPROPS(LOGITEM_DATAPROPS)
     DECLARE_DATAPROPS(LogItem, LogItemData)
 public:
+#ifndef eIR_USE_FUNCINFO_WORKAROUND
+    LogItem(const Severity::type & sev,
+            const FuncInfo & fni,
+            const QString & msg,
+            const QVariantList & vars=QVariantList());
+#else
+    LogItem(const enumSeverity & sev,
+            const QString & func,
+            const QFileInfo & file,
+            const int line,
+            const QString & msg,
+            const QVariantList & vars=QVariantList());
+#endif // eIR_USE_FUNCINFO_WORKAROUND
 };
 
 #endif // LOGITEM_H

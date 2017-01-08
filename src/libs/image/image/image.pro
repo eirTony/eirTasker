@@ -12,6 +12,7 @@ TEMPLATE = lib
 DEFINES += IMAGE_LIBRARY
 
 include (../imageCommon.pri)
+LIBS *= -lbase -ltype
 
 SOURCES += Image.cpp \
     ImageLib.cpp \

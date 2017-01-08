@@ -17,11 +17,13 @@ protected:
 
 
 private:
+#if 0
     EntityKey::List mContextKeys;
     EntityKey mConfigKey;
     EntityKey mInputKey;
     EntityKey mResultKey;
     TaskKeyList mParentTaskKeys;
+#endif
     float mCoefficent;
 };
 

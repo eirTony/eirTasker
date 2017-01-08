@@ -4,8 +4,14 @@ QT -= gui
 TARGET = TaskBox
 CONFIG += console
 CONFIG -= app_bundle
-
 TEMPLATE = app
 
-SOURCES += main.cpp
+include(../consoleCommon.pri)
+LIBS *= -ltype -llog
+
+SOURCES += main.cpp \
+    MainThread.cpp
+
+HEADERS += \
+    MainThread.h
 

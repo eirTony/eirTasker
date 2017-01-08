@@ -7,17 +7,18 @@ void BasicErrorInfo::resetError(void)
     mCode = 0, mString.clear(), mData.clear();
 }
 
-bool BasicErrorInfo::setError(const Severity sev)
+bool BasicErrorInfo::setError(const enumSeverity sev)
 {
-    Severity::set(sev);
+    mSeverity = sev;
     return isError();
 }
 
-bool BasicErrorInfo::setError(const Severity sev, const ErrorCode code,
+bool BasicErrorInfo::setError(const enumSeverity sev,
+                              const ErrorCode code,
                               const ErrorString & string,
                               const ErrorData & data)
 {
-    Severity::set(sev);
+    mSeverity = sev;
     mCode = code, mData = data;
     mString = string.isEmpty()
             ? string
@@ -27,17 +28,19 @@ bool BasicErrorInfo::setError(const Severity sev, const ErrorCode code,
     return isError();
 }
 
-bool BasicErrorInfo::setError(const Severity sev, const ErrorString & string,
+bool BasicErrorInfo::setError(const enumSeverity sev,
+                              const ErrorString & string,
                               const ErrorData & data)
 {
-    Severity::set(sev);
-    mCode = -1, mString = string, mData = data;
+    mSeverity = sev, mCode = -1,
+    mString = string, mData = data;
     return isError();
 }
 
-bool BasicErrorInfo::setError(const Severity sev, const ErrorData & data)
+bool BasicErrorInfo::setError(const enumSeverity sev,
+                              const ErrorData & data)
 {
-    Severity::set(sev);
+    mSeverity = sev;
     mCode = data.type();
     mString = mCode ? data.typeName() : QString();
     mData = data;
@@ -46,12 +49,12 @@ bool BasicErrorInfo::setError(const Severity sev, const ErrorData & data)
 
 bool BasicErrorInfo::isError(void) const
 {
-    return Severity::is(mErrorSeverity);
+    return BasicSeverity(mSeverity).isLevelGE(Critical);
 }
 
-Severity BasicErrorInfo::severity(void) const
+enumSeverity BasicErrorInfo::severity(void) const
 {
-    return Severity::value();
+    return mSeverity;
 }
 
 ErrorCode BasicErrorInfo::errorCode(void) const

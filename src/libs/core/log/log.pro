@@ -13,14 +13,18 @@ DEFINES += LOG_LIBRARY
 
 include (../coreCommon.pri)
 
-LIBS *= -lboost
+#INCLUDEPATH *= /lang/boost_1_63_0
+#LIBS *= -lboost
+LIBS *= -lbase
 
 SOURCES += LogLib.cpp \
     LogItem.cpp \
     Log.cpp \
     LogObject.cpp \
     LogMain.cpp \
-    SeverityFilter.cpp
+    SeverityFilter.cpp \
+    LogOutput.cpp \
+    TrollOutput.cpp \
 
 HEADERS += LogLib.h\
         log_global.h \
@@ -28,7 +32,11 @@ HEADERS += LogLib.h\
     Log.h \
     LogObject.h \
     LogMain.h \
-    SeverityFilter.h
+    SeverityFilter.h \
+    LogOutput.h \
+    TrollOutput.h \
+    logback.h \
+    logmacros.h
 
 unix {
     target.path = /usr/lib

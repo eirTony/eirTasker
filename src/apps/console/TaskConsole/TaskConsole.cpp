@@ -13,7 +13,6 @@
 
 TaskConsole::TaskConsole(QObject * parent)
     : QThread(parent)
-//    , cmpLocalLog(new boost::log::core)
 {
     setObjectName("TaskConsole");
     connect(this, SIGNAL(started()), this, SLOT(init()));

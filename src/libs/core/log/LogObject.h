@@ -1,9 +1,10 @@
 #ifndef LOGOBJECT_H
 #define LOGOBJECT_H
+#include "LogLib.h"
 
 #include <QObject>
 
-class LogObject : public QObject
+class LOGSHARED_EXPORT LogObject : public QObject
 {
     Q_OBJECT
 public:

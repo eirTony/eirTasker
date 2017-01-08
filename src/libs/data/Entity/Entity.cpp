@@ -1,6 +1,7 @@
 #include "Entity.h"
 
-
+#if 1
+#else
 Entity::Entity(void) {;}
 
 Entity::Entity(const Entity & other)
@@ -11,3 +12,4 @@ Entity::Entity(const Entity & other)
     foreach (QString key, keys)
         QSettings::setValue(key, other.value(key));
 }
+#endif

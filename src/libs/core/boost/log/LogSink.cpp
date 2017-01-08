@@ -8,6 +8,7 @@
 #include "Logger.h"
 #include "LogFilter.h"
 
+#ifdef USE_BOOST_LOG
 E2BLog::LogSink::LogSink(const QString &name,
                  QObject * parent)
     : QObject(parent)
@@ -39,3 +40,4 @@ bool E2BLog::LogSink::set(const QFileInfo & fi)
     if (f) f->open(QIODevice::WriteOnly);
     return set(f);
 }
+#endif

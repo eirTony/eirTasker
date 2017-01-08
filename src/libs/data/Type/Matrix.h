@@ -30,11 +30,13 @@ public:
     QSize size(void) const;
     QSize reserved(void) const;
     int reservedBytes(void) const;
-    T & at(const QPoint pt) const;
+    T at(const QPoint pt) const;
     QVector<T> rowData(const int row) const;
 
     T & operator = (const QPoint pt) const;
-    T & operator [] (const QPoint pt) const;
+    T operator [](const QPoint pt) const;
+
+    Integer index(const QPoint pt) const;
 
 private:
     QSize mSize;
