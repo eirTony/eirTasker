@@ -11,11 +11,8 @@
 #include "../base/BasicSeverity.h"
 typedef QString ProcessId;
 
+
 #ifndef eIR_USE_FUNCINFO_WORKAROUND
-
-#include "../base/FuncInfo.h"
-
-#ifdef eIR_USE_FUNCINFO_WORKAROUND
 
 #include "../base/FuncInfo.h"
 

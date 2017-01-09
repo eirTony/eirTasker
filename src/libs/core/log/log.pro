@@ -25,6 +25,7 @@ SOURCES += LogLib.cpp \
     SeverityFilter.cpp \
     LogOutput.cpp \
     TrollOutput.cpp \
+    LogFormat.cpp
 
 HEADERS += LogLib.h\
         log_global.h \
@@ -36,7 +37,8 @@ HEADERS += LogLib.h\
     LogOutput.h \
     TrollOutput.h \
     logback.h \
-    logmacros.h
+    logmacros.h \
+    LogFormat.h
 
 unix {
     target.path = /usr/lib

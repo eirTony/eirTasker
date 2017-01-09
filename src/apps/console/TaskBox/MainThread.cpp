@@ -42,8 +42,8 @@ void MainThread::init(void) // slot
     LogItem li(Info, qfi, fi, fln, infoMsg);
 #endif // eIR_USE_FUNCINFO_WORKAROUND
 
-    LogMain lm;
-    lm.add(li);
+    LogMain::add(li);
+
 #elif 0
     INFO("Starting %1 at %2",
          QCoreApplication::arguments().first(),

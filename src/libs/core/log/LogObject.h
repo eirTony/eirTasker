@@ -11,8 +11,10 @@ public:
     explicit LogObject(QObject * parent=0);
 
 signals:
+    void queueProcessed(void);
 
 public slots:
+    void processQueue(void);
 };
 
 #endif // LOGOBJECT_H

@@ -15,6 +15,7 @@
 
 #include "LogItem.h"
 
+class LogObject;
 class LogOutput;
 typedef QPair<LogItem, LogOutput *> LogQueueItem;
 
@@ -22,23 +23,22 @@ class LOGSHARED_EXPORT LogMain
 {
 public:
     LogMain(void);
-    bool add(const QUrl & url);
-    bool add(const LogItem & li);
+    static bool add(const QUrl & url);
+    static bool add(const LogItem & li);
+    static bool isQueueEmpty(void);
+    static LogQueueItem takeFirst(void);
 
 private:
-    bool addTroll(const QUrl & url);
+    static bool addTroll(const QUrl & url);
     
 private:
-    QMap<BasicName, LogOutput *> mNameOutputMap;
-    QQueue<LogQueueItem> mLogQueue;
+    static LogObject * mpLogObject;
+    static QMap<BasicName, LogOutput *> mNameOutputMap;
+    static QQueue<LogQueueItem> mLogQueue;
 
 #ifdef USE_BOOST_LOG
     E2BLog::Logger::CorePtr mpCore =  0;
 #endif
 };
-
-#include "../base/Singleton.h"
-class LOGSHARED_EXPORT Log : public StaticSingleton<LogMain> {;};
-#define LOG() { Log() }
 
 #endif // LOGMAIN_H

@@ -25,6 +25,11 @@ void BasicName::clear(void)
     mName.clear();
 }
 
+bool BasicName::isNull(void) const
+{
+    return mName.isNull();
+}
+
 QString BasicName::toString(void) const
 {
     return mName.toLower();
