@@ -1,7 +1,7 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-        Type \
-    Entity \
-    Kii
+        type \
+    entity \
+    kii
 

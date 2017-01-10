@@ -8,7 +8,7 @@ QT       += network sql xml
 
 QT       -= gui
 
-TARGET = Entity
+TARGET = entity
 TEMPLATE = lib
 
 DEFINES += ENTITY_LIBRARY

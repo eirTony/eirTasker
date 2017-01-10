@@ -8,7 +8,7 @@ QT       += xml
 
 QT       -= gui
 
-TARGET = Kii
+TARGET = kii
 TEMPLATE = lib
 
 DEFINES += KII_LIBRARY

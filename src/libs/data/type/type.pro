@@ -8,7 +8,7 @@ QT       += xml
 QT       += testlib
 #QT       -= gui
 
-TARGET = Type
+TARGET = type
 TEMPLATE = lib
 
 DEFINES += TYPE_LIBRARY
