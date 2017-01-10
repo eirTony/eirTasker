@@ -19,8 +19,8 @@ public:
 
 public: // virtual
     virtual bool filter(const LogItem & li) const;
-    virtual bool write(const enumSeverity sev,
-                       const QByteArray & ba);
+    virtual bool write(const BasicSeverity sev,
+                       const QByteArray & ba) = 0;
     virtual void flush(void);
 
 private:

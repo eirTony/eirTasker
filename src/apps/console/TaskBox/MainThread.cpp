@@ -1,24 +1,27 @@
 #include "MainThread.h"
 
+#include <QtDebug>
 #include <QDateTime>
 #include <QFileInfo>
 #include <QStringBuilder>
 #include <QTimer>
+#include <QUrl>
 
 #include <../../../libs/core/log/Log.h>
 #include <../../../libs/core/log/LogItem.h>
 #include <../../../libs/core/log/LogMain.h>
 
 MainThread::MainThread(QObject * parent)
-    : QThread(parent)
+    : QObject(parent)
 {
     setObjectName("MainThread");
-    connect(this, SIGNAL(started()), this, SLOT(init()));
-    QTimer::singleShot(100, this, SLOT(start())); // in QThread
 }
 
 void MainThread::init(void) // slot
 {
+    dumpObjectInfo();
+    LogMain::add(QUrl("troll://"));
+
 #if 1
     // INFO("Starting TaskBox");
     QFileInfo fi(__FILE__);

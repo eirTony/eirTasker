@@ -1,5 +1,6 @@
 #include "LogMain.h"
 
+#include <QtDebug>
 #include <QCoreApplication>
 #include <QTimer>
 
@@ -28,7 +29,9 @@ bool LogMain::add(const LogItem & li)
         if (plo && plo->filter(li))
             mLogQueue.append(LogQueueItem(li, plo));
     }
-    QTimer::singleShot(100, mpLogObject, SLOT(processQueue()));
+    qDebug("queued %i", mLogQueue.size());
+    mpLogObject->processQueue();
+    //QTimer::singleShot(100, mpLogObject, SLOT(processQueue()));
     return true;
 }
 
@@ -46,8 +49,8 @@ LogQueueItem LogMain::takeFirst(void)
 // private
 bool LogMain::addTroll(const QUrl & url)
 {
-#if 0
-    LogOutput * plo = new TrollOutput(url);
+#if 1
+    TrollOutput * plo = new TrollOutput(url);
     if (plo->isError())    return false;
     mNameOutputMap.insert(plo->name(), plo);
 #else

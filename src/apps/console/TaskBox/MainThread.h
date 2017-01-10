@@ -2,9 +2,8 @@
 #define MAINTHREAD_H
 
 #include <QObject>
-#include <QThread>
 
-class MainThread : public QThread
+class MainThread : public QObject
 {
     Q_OBJECT
 public:

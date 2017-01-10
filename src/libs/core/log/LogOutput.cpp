@@ -35,11 +35,13 @@ bool LogOutput::filter(const LogItem & li) const // virtual
     return true;
 }
 
+#if 0
 bool LogOutput::write(const enumSeverity sev,
                       const QByteArray & ba) // virtual
 {
     (void)sev, (void)ba;
     return false;
 }
+#endif
 
 void LogOutput::flush(void) {;} // virtual
