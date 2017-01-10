@@ -1,6 +1,6 @@
 #include "ImageLib.h"
 
-ImageLib::ImageLib()
+ImageLib::ImageLib(void)
 {
 
 }

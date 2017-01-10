@@ -1,11 +1,12 @@
 #ifndef FLAGS_H
 #define FLAGS_H
+#include "TypeLib.h"
 
 #include <QBitArray>
 
 #include "Index.h"
 
-class Flags
+class TYPESHARED_EXPORT Flags
 {
 public:
     Flags(const int size=0,

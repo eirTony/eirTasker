@@ -1,7 +1,4 @@
 #include "QQPolygon.h"
 
-QQPolygon::QQPolygon(void)
-{
-
-}
+QQPolygon::QQPolygon(void) : QPolygon() {;}
 

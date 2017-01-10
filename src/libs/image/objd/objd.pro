@@ -14,6 +14,7 @@ TEMPLATE = lib
 DEFINES += OBJD_LIBRARY
 
 include (../imageCommon.pri)
+LIBS *= -ltype -ltask -lframe
 
 SOURCES += Objd.cpp \
     ObjdInterface.cpp \

@@ -17,6 +17,7 @@ public:
     void set(const QString & s);
     void set(const char * chars);
     void clear(void);
+    bool isNull(void) const;
     QString toString(void) const;
     QString toLower(void) const;
     bool is(const QString & s) const;

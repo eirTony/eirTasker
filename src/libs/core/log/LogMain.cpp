@@ -1,8 +1,17 @@
 #include "LogMain.h"
 
+#include <QtDebug>
+#include <QCoreApplication>
+#include <QTimer>
+
 #include "../base/BasicName.h"
 
-LogMain::LogMain(void) {;}
+#include "LogObject.h"
+#include "TrollOutput.h"
+
+LogObject * LogMain::mpLogObject = new LogObject(qApp);
+QMap<BasicName, LogOutput *> LogMain::mNameOutputMap;
+QQueue<LogQueueItem> LogMain::mLogQueue;
 
 bool LogMain::add(const QUrl & url)
 {
@@ -13,10 +22,41 @@ bool LogMain::add(const QUrl & url)
         return false;
 }
 
+bool LogMain::add(const LogItem & li)
+{
+    foreach (LogOutput * plo, mNameOutputMap)
+    {
+        if (plo && plo->filter(li))
+            mLogQueue.append(LogQueueItem(li, plo));
+    }
+    qDebug("queued %i", mLogQueue.size());
+    mpLogObject->processQueue();
+    //QTimer::singleShot(100, mpLogObject, SLOT(processQueue()));
+    return true;
+}
 
+bool LogMain::isQueueEmpty(void)
+{
+    return mLogQueue.isEmpty();
+}
+
+LogQueueItem LogMain::takeFirst(void)
+{
+    return mLogQueue.takeFirst();
+}
+
+
+// private
 bool LogMain::addTroll(const QUrl & url)
 {
-    (void)url;
-    return false;
+#if 1
+    TrollOutput * plo = new TrollOutput(url);
+    if (plo->isError())    return false;
+    mNameOutputMap.insert(plo->name(), plo);
+#else
+    mNameOutputMap.insert(BasicName("troll"),
+                          new TrollOutput(url));
+#endif
+    return true;
 }
 

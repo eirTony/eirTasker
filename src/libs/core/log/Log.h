@@ -2,12 +2,12 @@
 #define LOG_H
 #include "LogLib.h"
 
-class LOGSHARED_EXPORT Log
-{
-public:
-    Log(void);
-#if 0
+#include "logmacros.h"
+
+#if 1
+#define INFO(msg)  _FMTITEM(QtInfoMsg,    INFO_PFX,  msg)
+#else
+#define INFO(msg, args...)  _FMTITEM(QtInfoMsg,    INFO_PFX,  msg, args)
 #endif
-};
 
 #endif // LOG_H

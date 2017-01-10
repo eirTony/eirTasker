@@ -1,8 +1,8 @@
 #include "Region.h"
 
-Region::Region(void) {;}
+Region::Region(void) : QQPolygon(), mName(BasicName()) {;}
 
-Region::Region(const QString & name, const QQPolygon & poly)
+Region::Region(const BasicName & name, const QQPolygon & poly)
     : QQPolygon(poly), mName(name) {;}
 
 

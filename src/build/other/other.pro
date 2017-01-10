@@ -10,3 +10,6 @@ DISTFILES += \
     ../../libs/image/imageCommon.pri \
     ../../libs/proc/procCommon.pri \
     ../../plugins/pluginsCommon.pri
+
+HEADERS += \
+    ../../../../../../lang/boost_1_63_0/boost/log/core.hpp

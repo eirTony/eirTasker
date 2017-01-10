@@ -4,10 +4,10 @@
 
 #include <QBitArray>
 
-class BitKey : public QBitArray
+class KIISHARED_EXPORT BitKey : public QBitArray
 {
 public:
-    BitKey();
+    BitKey(void);
 };
 
 #endif // BITKEY_H

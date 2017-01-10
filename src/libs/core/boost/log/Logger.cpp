@@ -1,5 +1,6 @@
 #include "Logger.h"
 
+#ifdef USE_BOOST_LOG
 const E2BLog::Logger::CorePtr E2BLog::Logger::csmpCore = BL::core::get();
 
 E2BLog::Logger::Logger(QObject * parent) : QObject(parent) {;}
@@ -17,3 +18,4 @@ bool E2BLog::Logger::isEnabled(void)
             ? csmpCore->get_logging_enabled()
             : false;
 }
+#endif

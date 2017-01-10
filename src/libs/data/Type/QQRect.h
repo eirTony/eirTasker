@@ -9,6 +9,7 @@ class TYPESHARED_EXPORT QQRect : public QRect
 {
 public:
     QQRect(void);
+    QQRect(const QQRect & other);
     QQRect(const QPoint tl, const QPoint br);
 
     void set(const QRect other);

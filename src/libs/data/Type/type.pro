@@ -15,6 +15,8 @@ DEFINES += TYPE_LIBRARY
 
 include(../dataCommon.pri)
 
+LIBS *= -lbase
+
 SOURCES += Type.cpp \
     Flags.cpp \
     Index.cpp \
@@ -22,7 +24,9 @@ SOURCES += Type.cpp \
     TypeLib.cpp \
     Integer.cpp \
     QQRect.cpp \
-    StreamParsed.cpp
+    StreamParsed.cpp \
+    Enumeration.cpp \
+    Severity.cpp \
 
 #   Matrix.cpp
 
@@ -37,7 +41,9 @@ HEADERS += Type.h\
     Integer.h \
     TInteger.h \
     QQRect.h \
-    StreamParsed.h
+    StreamParsed.h \
+    Enumeration.h \
+    Severity.h \
 
 unix {
     target.path = /usr/lib

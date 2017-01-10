@@ -13,6 +13,8 @@ TEMPLATE = lib
 
 DEFINES += TASK_LIBRARY
 
+LIBS *= -lbase -ltype -lkii
+
 include (../procCommon.pri)
 
 SOURCES += TaskLib.cpp \

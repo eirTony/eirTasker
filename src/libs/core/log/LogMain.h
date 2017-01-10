@@ -1,21 +1,44 @@
 #ifndef LOGMAIN_H
 #define LOGMAIN_H
+#include "LogLib.h"
 
+#include <QMap>
+#include <QPair>
+#include <QQueue>
 #include <QUrl>
 
-#include "../boost/log/Logger.h"
+#include "../base/BasicName.h"
 
-class LogMain
+#ifdef USE_BOOST_LOG
+#include "../boost/log/Logger.h"
+#endif
+
+#include "LogItem.h"
+
+class LogObject;
+class LogOutput;
+typedef QPair<LogItem, LogOutput *> LogQueueItem;
+
+class LOGSHARED_EXPORT LogMain
 {
 public:
     LogMain(void);
-    bool add(const QUrl & url);
+    static bool add(const QUrl & url);
+    static bool add(const LogItem & li);
+    static bool isQueueEmpty(void);
+    static LogQueueItem takeFirst(void);
 
 private:
-    bool addTroll(const QUrl & url);
+    static bool addTroll(const QUrl & url);
     
 private:
+    static LogObject * mpLogObject;
+    static QMap<BasicName, LogOutput *> mNameOutputMap;
+    static QQueue<LogQueueItem> mLogQueue;
+
+#ifdef USE_BOOST_LOG
     E2BLog::Logger::CorePtr mpCore =  0;
+#endif
 };
 
 #endif // LOGMAIN_H
