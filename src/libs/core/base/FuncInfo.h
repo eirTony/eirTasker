@@ -2,7 +2,7 @@
 #define FUNCINFO_H
 #include "BaseLib.h"
 
-#ifdef eIR_USE_FUNCINFO_WORKAROUND
+#ifndef eIR_USE_FUNCINFO_WORKAROUND
 
 #include <QSharedData>
 

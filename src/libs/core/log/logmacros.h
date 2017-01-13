@@ -6,8 +6,8 @@
 #include "LogItem.h"
 #include "LogMain.h"
 
-#define LOGADD(li)          LOGMAIN::add(li);
-#define LOGITEM(sev, msg)   LOGADD(LogItem(sev, msg));
+#define LOGADD(li)          LogMain::add(li);
+//#define LOGITEM(sev, msg)   LOGADD(LogItem(sev, msg));
 
 #define TRACE_PFX   ">Trace: "
 #define INFO_PFX    "-Info:  "
@@ -17,21 +17,12 @@
 #define DO_PFX      "DO-->   "
 #define USE_PFX     "USE->   "
 
-#if 1
+#define FUNCINFO Q_FUNC_INFO, QFileInfo(__FILE__), __LINE__
+
 #define _FMTITEM(sev, pfx, fmt) \
-        __LOGITEM(sev, pfx fmt) \
+        LOGADD(__LOGITEM(sev, pfx fmt)) \
 
 #define __LOGITEM(sev, msg) \
-        { LogItem li(sev, FUNCINFO, msg); } \
-
-
-#else
-#define _FMTITEM(sev, pfx, fmt, args...) \
-        __LOGITEM(sev, pfx fmt ,##args) \
-
-#define __LOGITEM(sev, msg, args...) \
-        { LogItem li(sev, FUNCINFO, msg ,##args); } \
-
-#endif // 1
+         LogItem(sev, FUNCINFO, msg) \
 
 #endif // LOGMACROS_H

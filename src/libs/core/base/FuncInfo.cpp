@@ -1,6 +1,6 @@
 #include "FuncInfo.h"
 
-#ifdef eIR_USE_FUNCINFO_WORKAROUND
+#ifndef eIR_USE_FUNCINFO_WORKAROUND
 
 DEFINE_DATAPROPS(FuncInfo, FuncInfoData)
 void FuncInfo::ctor(void) {;} // for DataProperty default c'tor

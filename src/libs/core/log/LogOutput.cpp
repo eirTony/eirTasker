@@ -27,7 +27,7 @@ BasicName LogOutput::name(void) const
 
 bool LogOutput::filter(const LogItem & li) const // virtual
 {
-    BasicSeverity sev(li.getSeverity());
+    BasicSeverity sev(li.getBasicSeverity());
     if (mMinSeverity && sev.isLT(mMinSeverity))
         return false;
     if (mMaxSeverity && sev.isGT(mMaxSeverity))

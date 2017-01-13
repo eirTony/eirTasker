@@ -24,7 +24,7 @@ void LogObject::processQueue(void)
         LogItem li = lqi.first;
         LogOutput * plo = lqi.second;
         QByteArray ba = LogFormat(li);
-        plo->write(li.getSeverity(), ba);
+        plo->write(li.getBasicSeverity(), ba);
         QTimer::singleShot(100, this, SLOT(processQueue()));
     }
 }

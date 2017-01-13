@@ -3,6 +3,8 @@
 // see https://github.com/eirTony/INDI1/blob/develop/incoming/JViolaJJones2/src/main/java/jviolajones/Feature.java
 
 #include <QtMath>
+#include <QDomElement>
+#include <QDomNodeList>
 
 HaarFeature::HaarFeature(void)
     : mThreshold(0)
@@ -18,7 +20,29 @@ HaarFeatureSize HaarFeature::size(void) const
     return mSize;
 }
 
-void HaarFeature::addRect(const HaarWeightedRect rect)
+HaarFeature::HaarFeature(const QDomElement & de)
+{
+    QDomElement featureDE = de.firstChildElement("feature");
+    QDomElement rectsDE = featureDE.firstChildElement("rects");
+    QDomNodeList rectNodes = rectsDE.childNodes();
+    int k = rectNodes.size();
+    for (int x = 0; x < k; ++x)
+    {
+        QDomElement rectDE = rectNodes.at(x).toElement();
+        HaarWeightedRect hwr(rectDE.text());
+        add(hwr);
+    }
+    QDomElement tiltedDE = featureDE.firstChildElement("tilted");
+    setTilted(tiltedDE.text().toInt());
+    QDomElement thresholdDE = de.firstChildElement("threshold");
+    QDomElement leftDE = de.firstChildElement("left_val");
+    QDomElement rightDE = de.firstChildElement("right_val");
+    setThreshold(thresholdDE.text().toFloat());
+    setLeftValue(leftDE.text().toFloat());
+    setRightValue(rightDE.text().toFloat());
+}
+
+void HaarFeature::add(const HaarWeightedRect rect)
 {
     mRectList.append(rect);
 }

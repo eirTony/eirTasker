@@ -12,22 +12,22 @@
 
 typedef QQRect HaarRectRect;
 typedef qreal HaarRectWeight;
-
 typedef qreal   HaarFeatureThreshold;
 typedef qreal   HaarFeatureValue;
 typedef QSize   HaarFeatureSize;
 typedef int     HaarFeatureNode;
 typedef bool    HaarFeatureBool;
+typedef bool    HaarFeatureTilted;
 typedef HaarFeatureBool HaarFeatureIsRight;
 typedef qreal   HaarFeatureScale;
 typedef Matrix<int> HaarFeatureSquares;
 typedef int HaarFeatureCoordinate;
 typedef double HaarFeatureInternalDouble;
 typedef QRect HaarFeatureInternalRect;
-
 typedef HaarFeatureThreshold    HaarStageThreshold;
 typedef bool                    HaarStageBoolean;
-
+typedef int     HaarStageParent;
+typedef int     HaarStageNext;
 typedef QSize HaarDetectorSize;
 typedef bool HaarDetectorBoolean;
 typedef QList<HaarRectRect> HaarObsList;

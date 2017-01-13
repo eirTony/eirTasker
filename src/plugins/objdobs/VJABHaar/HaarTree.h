@@ -3,6 +3,7 @@
 #include "VJABHaar.h"
 
 #include <QList>
+class QDomElement;
 
 #include "HaarFeature.h"
 
@@ -10,6 +11,7 @@ class HaarTree
 {
 public:
     HaarTree(void);
+    HaarTree(const QDomElement & de);
     void add(const HaarFeature & feature);
     HaarFeatureValue getValue(const HaarGreyFrame & grey,
                               const HaarFeatureSquares & squares,

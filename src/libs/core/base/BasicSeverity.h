@@ -36,7 +36,8 @@ enum enumSeverity
 class BASESHARED_EXPORT BasicSeverity
 {
 public:
-    BasicSeverity(const enumSeverity sev);
+    BasicSeverity(const enumSeverity
+                        sev=NullBasicSeverity);
     BasicSeverity(const int i);
 
     bool isNull(void) const;

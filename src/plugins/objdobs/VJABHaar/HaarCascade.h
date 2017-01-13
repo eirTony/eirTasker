@@ -23,6 +23,7 @@ public:
         NoStagesElement,
         NoFirstStageElement,
         EmptyTreesElement,
+        StagesElementEmpty,
     };
 
 public:
@@ -34,13 +35,9 @@ public:
     bool set(const QDomElement & de);
 
 private:
-    bool ingestStages(const QDomElement & stagesDE);
-    bool ingestTrees(const QDomElement & treesDE);
-
-private:
     const QString cmExpectedTypeId = QString("opencv-haar-classifier");
     QDomElement mDocElement;
-    QDomElement mStagesElement;
+    QList<QDomElement> mStageDEs;
     HaarDetectorSize mDetectorSize;
     HaarStageList mStages;
 };

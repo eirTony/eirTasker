@@ -55,30 +55,21 @@ bool HaarCascade::set(const QDomElement & de)
     QDomElement stagesDE = openCvDE.firstChildElement("stages");
     if (stagesDE.isNull())
         return setError(NoStagesElement);                       //----------
-
-    return ingestStages(stagesDE);
-}
-
-bool HaarCascade::ingestStages(const QDomElement & stagesDE)
-{
-    QDomElement stageDE = stagesDE.firstChildElement("_");
-    if (stageDE.isNull())
-        return setError(NoFirstStageElement);                   //----------
-    do
+    QDomNodeList stageNodes = stagesDE.childNodes();
+    if (stageNodes.isEmpty())
+        return setError(StagesElementEmpty);                    //----------
+    int k = stageNodes.size();
+    mStageDEs.reserve(k);
+    for (int x = 0; x < k; ++x)
     {
-        QDomElement treesDE = stageDE.firstChildElement("trees");
-        if (treesDE.isNull())
-            return setError(EmptyTreesElement,                  //----------
-                            QString("in stage %1")
-                                .arg(mStages.size()));
-    } while (false);
+        QDomNode dn = stageNodes.at(x);
+        if (dn.isElement())
+            mStageDEs.append(dn.toElement());
+    }
 
-    return false;
-}
+    // Start tasks for stage reads
 
+    // collect stages from tasks
 
-bool HaarCascade::ingestTrees(const QDomElement & treesDE)
-{
-    (void)treesDE;
-    return false;
+    return true;
 }

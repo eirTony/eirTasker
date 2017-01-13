@@ -1,6 +1,19 @@
 #include "HaarTree.h"
 
+#include <QDomElement>
+
 HaarTree::HaarTree(void) {;}
+
+HaarTree::HaarTree(const QDomElement & de)
+{
+    QDomElement featureDE = de.firstChildElement();
+    do
+    {
+        HaarFeature feature(featureDE);
+        add(feature);
+        featureDE = featureDE.nextSiblingElement();
+    } while ( ! featureDE.isNull());
+}
 
 void HaarTree::add(const HaarFeature & feature)
 {
@@ -17,7 +30,7 @@ HaarFeatureValue HaarTree::getValue(const HaarGreyFrame & grey,
 
     forever
     {
-
+        break;
     }
 
     return featureValue;
