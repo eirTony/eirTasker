@@ -31,6 +31,16 @@ void HaarStage::setThreshold(const HaarStageThreshold threshold)
     mThreshold = threshold;
 }
 
+void HaarStage::setParent(const HaarStageParent parent)
+{
+    mParentStage = parent;
+}
+
+void HaarStage::setNext(const HaarStageNext next)
+{
+    mNextStage = next;
+}
+
 void HaarStage::add(const HaarTree & tree)
 {
     mTreeList.append(tree);

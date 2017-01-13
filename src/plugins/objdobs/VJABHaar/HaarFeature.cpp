@@ -42,6 +42,28 @@ HaarFeature::HaarFeature(const QDomElement & de)
     setRightValue(rightDE.text().toFloat());
 }
 
+void HaarFeature::setTilted(const HaarFeatureTilted tilted)
+{
+    mTilted = tilted;
+}
+
+void HaarFeature::setThreshold(const HaarFeatureThreshold threshold)
+{
+    mThreshold = threshold;
+}
+
+void HaarFeature::setLeftValue(const HaarFeatureValue value)
+{
+    mLeftValue = value;
+}
+
+void HaarFeature::setRightValue(const HaarFeatureValue value)
+{
+    mRightValue = value;
+}
+
+
+
 void HaarFeature::add(const HaarWeightedRect rect)
 {
     mRectList.append(rect);

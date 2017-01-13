@@ -25,6 +25,9 @@ public:
 private:
     const int mIndex;
     HaarStageThreshold mThreshold;
+    HaarStageParent mParentStage;
+    HaarStageNext mNextStage;
+
     QLinkedList<HaarTree> mTreeList;
 };
 
