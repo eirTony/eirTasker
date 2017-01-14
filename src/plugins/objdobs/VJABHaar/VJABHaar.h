@@ -6,8 +6,8 @@
 #include <QRect>
 #include <QSize>
 
-#include "../../../libs/data/Type/Matrix.h"
-#include "../../../libs/data/Type/QQRect.h"
+#include "../../../libs/data/type/Matrix.h"
+#include "../../../libs/data/type/QQRect.h"
 #include "../../../libs/image/frame/Frame.h"
 
 typedef QQRect HaarRectRect;

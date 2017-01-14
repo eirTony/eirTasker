@@ -2,7 +2,7 @@
 #define FRAME_H
 #include "FrameLib.h"
 
-#include "../../../libs/data/Type/Matrix.h"
+#include "../../../libs/data/type/Matrix.h"
 
 template <class PIXEL>
     class FRAMESHARED_EXPORT Frame

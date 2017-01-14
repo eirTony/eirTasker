@@ -22,5 +22,8 @@ else {
         DESTDIR = $$EXEDIR/bin32W
         LIBS += -L$$EXEDIR/bin32W
 }
+
+QMAKE_LFLAGS_RPATH *= EXEDIR
+
 #message ($$PWD)
 #message ($$DESTDIR)
