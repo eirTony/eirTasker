@@ -5,6 +5,8 @@
 #include "../base/BasicSeverity.h"
 #include "logmacros.h"
 
-#define INFO(msg)  _FMTITEM(Info,    INFO_PFX,  msg)
+#define INFOMSG(msg)  _FMTITEM(Info,    INFO_PFX,  msg)
+//#define TRACE(msg, args...) _FMTITEM(QtDebugMsg,   TRACE_PFX, msg, args)
+#define INFO(msg, args...)  _FMTARGS(Info,    INFO_PFX,  msg, args)
 
 #endif // LOG_H

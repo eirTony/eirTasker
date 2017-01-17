@@ -42,6 +42,20 @@ public:
             const int line,
             const QString & msg,
             const QVariantList & vars=QVariantList());
+    LogItem(const enumSeverity & sev,
+            const char * func,
+            const QFileInfo & file,
+            const int line,
+            const QString & msg,
+            const QVariant & var1,
+            const QVariant & var2=QVariant(),
+            const QVariant & var3=QVariant(),
+            const QVariant & var4=QVariant(),
+            const QVariant & var5=QVariant(),
+            const QVariant & var6=QVariant(),
+            const QVariant & var7=QVariant(),
+            const QVariant & var8=QVariant(),
+            const QVariant & var9=QVariant());
 };
 
 #endif // LOGITEM_H
