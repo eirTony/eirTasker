@@ -4,7 +4,7 @@
 #include <QFileInfo>
 #include <QDomDocument>
 
-#include "../../../libs/data/Type/StreamParsed.h"
+#include "../../../libs/data/type/StreamParsed.h"
 
 HaarCascade::HaarCascade(void) {;}
 HaarCascade::HaarCascade(const QFileInfo & xmlFi) { set(xmlFi); }
