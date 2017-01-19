@@ -20,7 +20,6 @@ SOURCES += BaseLib.cpp \
     BasicId.cpp \
     BasicName.cpp \
     BasicSeverity.cpp \
-    FuncInfo.cpp
 
 HEADERS += BaseLib.h\
         base_global.h \
@@ -35,7 +34,6 @@ HEADERS += BaseLib.h\
     BasicId.h \
     Named.h \
     DataProperty.h \
-    FuncInfo.h
 
 unix {
     target.path = /usr/lib
