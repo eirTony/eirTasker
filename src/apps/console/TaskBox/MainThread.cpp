@@ -22,12 +22,12 @@ void MainThread::init(void) // slot
 {
     LogMain::add(QUrl("troll://"));
 
-#if 1
     INFO("Starting %1 at %2",
          QCoreApplication::arguments().first(),
          QDateTime::currentDateTime().toString());
-#else
-    INFOMSG("Starting " + QCoreApplication::arguments().first()
+    INFO("Starting " + QCoreApplication::arguments().first()
             + " at " + QDateTime::currentDateTime().toString());
-#endif
+    INFOIF(true, "This should print");
+    INFONOT(true, "And This should not");
+    INFONOT(false, "But, this one should");
 }

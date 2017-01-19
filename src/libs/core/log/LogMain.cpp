@@ -29,9 +29,7 @@ bool LogMain::add(const LogItem & li)
         if (plo && plo->filter(li))
             mLogQueue.append(LogQueueItem(li, plo));
     }
-    qDebug("queued %i", mLogQueue.size());
     mpLogObject->processQueue();
-    //QTimer::singleShot(100, mpLogObject, SLOT(processQueue()));
     return true;
 }
 

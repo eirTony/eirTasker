@@ -37,8 +37,8 @@ HEADERS += LogLib.h\
     LogOutput.h \
     TrollOutput.h \
     logback.h \
-    logmacros.h \
-    LogFormat.h
+    LogFormat.h \
+    LogMacros.h
 
 unix {
     target.path = /usr/lib
