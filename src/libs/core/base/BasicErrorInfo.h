@@ -28,7 +28,7 @@ public:
                   const ErrorData & data);
 
     bool isEmpty(void) const;
-    bool isError(void) const;
+    bool isCritical(void) const;
     enumSeverity severity(void) const;
     ErrorCode errorCode(void) const;
     ErrorString errorString(void) const;

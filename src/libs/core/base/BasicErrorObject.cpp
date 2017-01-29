@@ -25,6 +25,6 @@ void BasicErrorObject::handleError(const enumSeverity sev,
 
 void BasicErrorObject::emitError(void)
 {
-    if (isError())
+    if (isCritical())
         emit(errorCode(), errorString(), errorData());
 }

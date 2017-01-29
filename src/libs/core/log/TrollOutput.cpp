@@ -12,11 +12,18 @@ bool TrollOutput::write(const BasicSeverity sev,
     QtMsgType qmt = sev.trollType();
     switch (qmt)
     {
-    case QtDebugMsg:    qDebug(ba);     break;
     case QtInfoMsg:     qInfo(ba);      break;
-    case QtWarningMsg:  qWarning(ba);   break;
-    case QtCriticalMsg: qCritical(ba);  break;
-    case QtFatalMsg:    qFatal(ba);     break;
+#ifndef QT_FATAL_WARNINGS
+    case QtDebugMsg:    qDebug(ba);     break;
+    case QtWarningMsg:
+    case QtCriticalMsg:
+    case QtFatalMsg:    qWarning(ba);   break;
+#else
+    case QtDebugMsg:
+    case QtWarningMsg:
+    case QtCriticalMsg:
+    case QtFatalMsg:    qDebug(ba);     break;
+#endif
     }
     return true;
 }

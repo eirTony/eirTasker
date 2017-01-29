@@ -29,7 +29,7 @@ bool LogMain::add(const LogItem & li)
         if (plo && plo->filter(li))
             mLogQueue.append(LogQueueItem(li, plo));
     }
-    mpLogObject->processQueue();
+    QTimer::singleShot(10, mpLogObject, SLOT(processQueue()));
     return true;
 }
 
@@ -49,7 +49,7 @@ bool LogMain::addTroll(const QUrl & url)
 {
 #if 1
     TrollOutput * plo = new TrollOutput(url);
-    if (plo->isError())    return false;
+    if (plo->isCritical())    return false;
     mNameOutputMap.insert(plo->name(), plo);
 #else
     mNameOutputMap.insert(BasicName("troll"),

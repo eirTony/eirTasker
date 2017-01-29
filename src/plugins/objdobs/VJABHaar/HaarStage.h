@@ -5,25 +5,29 @@
 #include <QLinkedList>
 class QDomElement;
 
+#include <../../../libs/core/base/BasicErrorInfo.h>
+#include "../../../libs/data/type/Index.h"
+
 #include "HaarTree.h"
 
-class HaarStage
+class HaarStage : public BasicErrorInfo
 {
 public:
     HaarStage(void);
-    HaarStage(const int index,
+    HaarStage(const Index index,
               const QDomElement & de);
     void setThreshold(const HaarStageThreshold threshold);
     void setParent(const HaarStageParent parent);
     void setNext(const HaarStageNext next);
     void add(const HaarTree & tree);
+    bool isValid(void) const;
     HaarStageBoolean pass(const HaarGreyFrame & grey,
                           const HaarFeatureSquares & squares,
                           const HaarFramePoint pt,
                           const HaarFeatureScale scale);
 
 private:
-    const int mIndex;
+    int mIndex;
     HaarStageThreshold mThreshold;
     HaarStageParent mParentStage;
     HaarStageNext mNextStage;

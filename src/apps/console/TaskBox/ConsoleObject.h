@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+class VJABHaar;
+
 class MainThread : public QObject
 {
     Q_OBJECT
@@ -11,6 +13,9 @@ public:
 
 private slots:
     void init(void);
+
+private:
+    VJABHaar * mpHaar = 0;
 
 };
 

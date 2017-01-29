@@ -1,4 +1,4 @@
-#include "MainThread.h"
+#include "ConsoleObject.h"
 
 #include <QtDebug>
 #include <QCoreApplication>
@@ -12,13 +12,17 @@
 #include <../../../libs/core/log/LogItem.h>
 #include <../../../libs/core/log/LogMain.h>
 
-MainThread::MainThread(QObject * parent)
+#include <../../../plugins/objdobs/VJABHaar/VJABHaar.h>
+#include <../../../plugins/objdobs/VJABHaar/HaarCascade.h>
+
+ConsoleObject::ConsoleObject(QObject * parent)
     : QObject(parent)
+    , mpHaar(new VJABHaar)
 {
     setObjectName("MainThread");
 }
 
-void MainThread::init(void) // slot
+void ConsoleObject::init(void) // slot
 {
     LogMain::add(QUrl("troll://"));
 
@@ -30,4 +34,10 @@ void MainThread::init(void) // slot
     INFOIF(true, "This should print");
     INFONOT(true, "And This should not");
     INFONOT(false, "But, this one should");
+
+    QFileInfo haarFI("../../detectors/haarcascade_frontalface_default.xml");
+    EXPECT(haarFI.exists());
+    EXPECT(mpHaar->cascade()->load(haarFI));
+
+    QTimer::singleShot(5000, qApp, SLOT(quit()));
 }

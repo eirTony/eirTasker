@@ -13,6 +13,8 @@ DEFINES += BASE_LIBRARY
 
 include (../coreCommon.pri)
 
+LIBS *= -llog
+
 SOURCES += BaseLib.cpp \
     BinaryBase.cpp \
     BasicErrorInfo.cpp \

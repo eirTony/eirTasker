@@ -12,7 +12,8 @@ TEMPLATE = lib
 DEFINES += VJABHAAR_LIBRARY
 
 include (../objdobsCommon.pri)
-LIBS *= -lbase -ltype
+LIBS *= -lbase -llog
+LIBS *= -ltype
 
 SOURCES += VJABHaar.cpp \
     HaarLib.cpp \

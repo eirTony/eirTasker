@@ -43,6 +43,9 @@ public:
     bool isNull(void) const;
     bool isValid(void) const;
     operator bool (void) const;
+    operator int (void) const;
+    void set(const BasicSeverity sev);
+    enumSeverity setMax(const BasicSeverity sev);
     bool isLevelGE(const enumSeverity other) const;
     enumSeverity level(void) const;
     QtMsgType trollType(void) const;

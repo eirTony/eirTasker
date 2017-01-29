@@ -4,6 +4,8 @@
 
 #include <QObject>
 
+#include "../../../libs/core/base/BasicSeverity.h"
+
 class LOGSHARED_EXPORT LogObject : public QObject
 {
     Q_OBJECT
@@ -15,6 +17,9 @@ signals:
 
 public slots:
     void processQueue(void);
+
+private:
+    BasicSeverity mMaxSeverity;
 };
 
 #endif // LOGOBJECT_H

@@ -1,5 +1,7 @@
 #include "BasicErrorInfo.h"
 
+#include "../log/Log.h"
+
 BasicErrorInfo::BasicErrorInfo(void) : mCode(0) {;}
 
 void BasicErrorInfo::resetError(void)
@@ -10,7 +12,10 @@ void BasicErrorInfo::resetError(void)
 bool BasicErrorInfo::setError(const enumSeverity sev)
 {
     mSeverity = sev;
-    return isError();
+    mCode = -1;
+    mString = QString("Severity=%1").arg((int)mSeverity);
+    mData.clear();
+    return isCritical();
 }
 
 bool BasicErrorInfo::setError(const enumSeverity sev,
@@ -25,7 +30,7 @@ bool BasicErrorInfo::setError(const enumSeverity sev,
             : code ? QString()
                    : QString("Error: %1 0x%2").arg(code)
                             .arg(code, 16, 16, QChar('0'));
-    return isError();
+    return isCritical();
 }
 
 bool BasicErrorInfo::setError(const enumSeverity sev,
@@ -34,7 +39,7 @@ bool BasicErrorInfo::setError(const enumSeverity sev,
 {
     mSeverity = sev, mCode = -1,
     mString = string, mData = data;
-    return isError();
+    return isCritical();
 }
 
 bool BasicErrorInfo::setError(const enumSeverity sev,
@@ -44,12 +49,15 @@ bool BasicErrorInfo::setError(const enumSeverity sev,
     mCode = data.type();
     mString = mCode ? data.typeName() : QString();
     mData = data;
-    return isError();
+    return isCritical();
 }
 
-bool BasicErrorInfo::isError(void) const
+bool BasicErrorInfo::isCritical(void) const
 {
-    return BasicSeverity(mSeverity).isLevelGE(Critical);
+    BasicSeverity sev(mSeverity);
+    if ( ! sev.isNull())
+        _LOGITEMADD(mSeverity, mString, mCode, QString::number(mCode, 16), mData);
+    return sev.isLevelGE(Critical);
 }
 
 enumSeverity BasicErrorInfo::severity(void) const

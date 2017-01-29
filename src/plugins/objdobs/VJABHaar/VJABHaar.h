@@ -17,7 +17,7 @@ typedef qreal   HaarFeatureValue;
 typedef QSize   HaarFeatureSize;
 typedef int     HaarFeatureNode;
 typedef bool    HaarFeatureBool;
-typedef bool    HaarFeatureTilted;
+typedef bool    HaarFeatureTilted; // TBD what does non-zero look like?
 typedef HaarFeatureBool HaarFeatureIsRight;
 typedef qreal   HaarFeatureScale;
 typedef Matrix<int> HaarFeatureSquares;
@@ -43,13 +43,17 @@ typedef Frame<HaarGreyPixel> HaarGreyFrame;
 typedef QSize HaarObsSize;
 typedef QList<HaarObsSize> HaarObsSizes;
 
-
+class HaarCascade;
 
 class VJABHAARSHARED_EXPORT VJABHaar
 {
 
 public:
     VJABHaar(void);
+    HaarCascade * cascade(void);
+
+private:
+    HaarCascade * mpCascade = 0;
 };
 
 #endif // VJABHAAR_H

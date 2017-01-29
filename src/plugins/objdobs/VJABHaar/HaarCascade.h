@@ -7,6 +7,8 @@ class QDomDocument;
 #include <QDomElement>
 
 #include <../../../libs/core/base/BasicErrorInfo.h>
+#include <../../../libs/data/type/Index.h>
+
 #include "HaarStage.h"
 
 typedef QList<HaarStage> HaarStageList;
@@ -24,15 +26,19 @@ public:
         NoFirstStageElement,
         EmptyTreesElement,
         StagesElementEmpty,
+        NoStageTreesElement = 1101,
+        XmlParseNotSupported = 1999
     };
 
 public:
     HaarCascade(void);
     HaarCascade(const QFileInfo & xmlFi);
     HaarCascade(const QDomDocument & doc);
-    bool set(const QFileInfo & xmlFi);
-    bool set(const QDomDocument & doc);
-    bool set(const QDomElement & de);
+    bool load(const QFileInfo & xmlFi);
+    bool load(const QDomDocument & doc);
+    bool load(const QDomElement & de);
+    bool loadStage(const Index x,
+                   const QDomElement & de);
 
 private:
     const QString cmExpectedTypeId = QString("opencv-haar-classifier");

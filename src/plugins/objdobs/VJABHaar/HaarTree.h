@@ -13,6 +13,7 @@ public:
     HaarTree(void);
     HaarTree(const QDomElement & de);
     void add(const HaarFeature & feature);
+    int featureSize(void) const;
     HaarFeatureValue getValue(const HaarGreyFrame & grey,
                               const HaarFeatureSquares & squares,
                               const HaarFramePoint pt,

@@ -6,6 +6,9 @@
 #include <QDomElement>
 #include <QDomNodeList>
 
+#include "../../../libs/core/log/Log.h"
+#include "../../../libs/data/type/Readable.h"
+
 HaarFeature::HaarFeature(void)
     : mThreshold(0)
     , mLeftValue(0)
@@ -15,14 +18,19 @@ HaarFeature::HaarFeature(void)
     , mHasLeftNode(false)
     , mHasRightNode(false) {;}
 
-HaarFeatureSize HaarFeature::size(void) const
-{
-    return mSize;
-}
-
 HaarFeature::HaarFeature(const QDomElement & de)
 {
     QDomElement featureDE = de.firstChildElement("feature");
+
+    QDomElement tiltedDE = featureDE.firstChildElement("tilted");
+    QDomElement thresholdDE = de.firstChildElement("threshold");
+    QDomElement leftDE = de.firstChildElement("left_val");
+    QDomElement rightDE = de.firstChildElement("right_val");
+    setTilted(tiltedDE.text().toInt());
+    setThreshold(thresholdDE.text().toFloat());
+    setLeftValue(leftDE.text().toFloat());
+    setRightValue(rightDE.text().toFloat());
+
     QDomElement rectsDE = featureDE.firstChildElement("rects");
     QDomNodeList rectNodes = rectsDE.childNodes();
     int k = rectNodes.size();
@@ -32,41 +40,47 @@ HaarFeature::HaarFeature(const QDomElement & de)
         HaarWeightedRect hwr(rectDE.text());
         add(hwr);
     }
-    QDomElement tiltedDE = featureDE.firstChildElement("tilted");
-    setTilted(tiltedDE.text().toInt());
-    QDomElement thresholdDE = de.firstChildElement("threshold");
-    QDomElement leftDE = de.firstChildElement("left_val");
-    QDomElement rightDE = de.firstChildElement("right_val");
-    setThreshold(thresholdDE.text().toFloat());
-    setLeftValue(leftDE.text().toFloat());
-    setRightValue(rightDE.text().toFloat());
+}
+
+int HaarFeature::rectsSize(void) const
+{
+    return mRectList.size();
+}
+
+HaarFeatureSize HaarFeature::size(void) const
+{
+    return mSize;
 }
 
 void HaarFeature::setTilted(const HaarFeatureTilted tilted)
 {
     mTilted = tilted;
+    TRACE("------FeatureTilted = %1", mTilted);
 }
 
 void HaarFeature::setThreshold(const HaarFeatureThreshold threshold)
 {
     mThreshold = threshold;
+    TRACE("------FeatureThreshold = %1", mThreshold);
 }
 
 void HaarFeature::setLeftValue(const HaarFeatureValue value)
 {
     mLeftValue = value;
+    TRACE("------FeatureLeftValue = %1", mLeftValue);
 }
 
 void HaarFeature::setRightValue(const HaarFeatureValue value)
 {
     mRightValue = value;
+    TRACE("------FeatureRightValue = %1", mRightValue);
 }
 
-
-
-void HaarFeature::add(const HaarWeightedRect rect)
+void HaarFeature::add(const HaarWeightedRect hwrc)
 {
-    mRectList.append(rect);
+    TRACE("------Feature adding rect %1 = %2, weight = %3",
+          mRectList.size(), Readable(hwrc.rect()), hwrc.weight());
+    mRectList.append(hwrc);
 }
 
 HaarFeatureIsRight HaarFeature::isRight(const HaarSumsFrame & sums,

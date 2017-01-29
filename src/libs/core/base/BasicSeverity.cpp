@@ -27,6 +27,11 @@ BasicSeverity::operator bool (void) const
     return isValid();
 }
 
+BasicSeverity::operator int (void) const
+{
+    return (int)mSeverity;
+}
+
 
 bool BasicSeverity::isLevelGE(const enumSeverity other) const
 {
@@ -67,6 +72,18 @@ enumSeverity BasicSeverity::level(void) const
 
     return sev;
 }
+
+void BasicSeverity::set(const BasicSeverity sev)
+{
+    *this = (int)sev;
+}
+
+enumSeverity BasicSeverity::setMax(const BasicSeverity sev)
+{
+    if (isGT(sev)) set(sev);
+    return mSeverity;
+}
+
 
 QtMsgType BasicSeverity::trollType(void) const
 {

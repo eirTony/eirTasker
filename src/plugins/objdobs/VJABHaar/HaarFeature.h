@@ -18,8 +18,8 @@ public:
     void setThreshold(const HaarFeatureThreshold threshold);
     void setLeftValue(const HaarFeatureValue value);
     void setRightValue(const HaarFeatureValue value);
-    void add(const HaarWeightedRect rect);
-
+    void add(const HaarWeightedRect hwrc);
+    int rectsSize(void) const;
     HaarFeatureSize size(void) const;
     HaarFeatureIsRight isRight(const HaarSumsFrame & sums,
                                const HaarSquaresFrame & squares,
@@ -27,7 +27,7 @@ public:
                                const HaarFeatureScale scale);
 
 private:
-    QList<HaarWeightedRect>         mRectList;
+    QList<HaarWeightedRect> mRectList;
     HaarFeatureTilted       mTilted;
     HaarFeatureThreshold    mThreshold;
     HaarFeatureValue        mLeftValue;

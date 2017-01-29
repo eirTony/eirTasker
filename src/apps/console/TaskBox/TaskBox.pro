@@ -1,5 +1,6 @@
 QT += core
 QT -= gui
+QT += xml
 
 TARGET = TaskBox
 CONFIG += console
@@ -8,10 +9,11 @@ TEMPLATE = app
 
 include(../consoleCommon.pri)
 LIBS *= -ltype -llog
+LIBS *= -lVJABHaar
 
 SOURCES += main.cpp \
-    MainThread.cpp
+    ConsoleObject.cpp
 
 HEADERS += \
-    MainThread.h
+    ConsoleObject.h
 
